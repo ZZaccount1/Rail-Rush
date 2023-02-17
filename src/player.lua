@@ -4,7 +4,7 @@ player.x = 0
 player.y = 0
 player.speed = 1
 
-local rectangleSize = 10
+local rectangleSize = 32
 
 function player:update(dt)
     if love.keyboard.isDown("up") or love.keyboard.isDown("w") then
