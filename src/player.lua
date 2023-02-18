@@ -2,7 +2,7 @@ player = {}
 
 player.x = 0
 player.y = 0
-player.speed = 1
+player.speed = 0.5
 player.scale = 3.2
 
 local rectangleSize = 32
@@ -29,7 +29,7 @@ function player:update(dt)
     else
         player.anim = player.animations.idleL
     end
-    
+
     if love.keyboard.isDown("up") or love.keyboard.isDown("w") then
         player.y = player.y - player.speed
     end
