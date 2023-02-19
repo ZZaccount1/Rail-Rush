@@ -22,7 +22,7 @@ function love.load()
 
     cam = camera()
 
-    dwayne = rock(10,10)
+    dwayne = tree(10,10)
 end
 
 function love.draw()

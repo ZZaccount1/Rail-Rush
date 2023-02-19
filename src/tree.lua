@@ -1,12 +1,12 @@
-rock = object.extend(object)
+tree = object.extend(object)
 
-function rock:new(x, y)
+function tree:new(x, y)
     self.x = x
     self.y = y
     self.spriteSheet = love.graphics.newImage("sprites/props.png")
-    self.quad = love.graphics.newQuad(0, 0, 16, 16, self.spriteSheet)
+    self.quad = love.graphics.newQuad(16*0, 16*1, 16*1, 16*3, self.spriteSheet)
 end
 
-function rock:draw()
+function tree:draw()
     love.graphics.draw(self.spriteSheet, self.quad, self.x, self.y)
 end

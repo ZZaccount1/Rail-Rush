@@ -85,7 +85,9 @@ end
 
 function player:draw()
     cam:attach()
+        
         player.anim:draw(player.spriteSheet, player.x, player.y, nil, player.scale)
+    
     cam:detach()
 end
 
