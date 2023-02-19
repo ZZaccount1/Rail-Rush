@@ -2,9 +2,6 @@ world = {}
 
 function world:load()
     worldMap = wf.newWorld(0,0)
-
-    local wall = worldMap:newRectangleCollider(20, 20, 50, 70)
-    wall:setType("static")
 end
 
 function world:update(dt)

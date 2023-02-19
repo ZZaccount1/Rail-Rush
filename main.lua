@@ -24,13 +24,10 @@ function love.load()
     af.load("src")
 
     cam = camera()
-
-    dwayne = tree(10,10)
 end
 
 function love.draw()
     af:draw()
-    dwayne:draw()
     world:draw()
 end
 
