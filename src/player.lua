@@ -10,9 +10,12 @@ player.animations = {}
 
 player.facingRight = true
 
+local tileSizeX = 11
+local tileSizeY = 15
+
 function player:load()
     player.spriteSheet = love.graphics.newImage('sprites/player.png')
-    player.grid = anim8.newGrid(11, 15, player.spriteSheet:getWidth(), player.spriteSheet:getHeight())
+    player.grid = anim8.newGrid(tileSizeX, tileSizeY, player.spriteSheet:getWidth(), player.spriteSheet:getHeight())
 
     player.animations.speed = 0.2
     player.animations.idleR = anim8.newAnimation(player.grid('1-3', 1), player.animations.speed)
@@ -61,7 +64,7 @@ function player:update(dt)
 
     player.anim:update(dt)
 
-    cam:lookAt(player.x, player.y)
+    cam:lookAt(player.x + (tileSizeX/2), player.y + (tileSizeY/2))
 end
 
 function player:draw()
