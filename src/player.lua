@@ -65,17 +65,19 @@ function player:update(dt)
     player.anim:update(dt)
 
     cam:lookAt(player.x + (tileSizeX/2), player.y + (tileSizeY/2))
+    
+    local mapW = gameMap.width * gameMap.tilewidth * map.scale
+    local mapH = gameMap.height * gameMap.tileheight * map.scale
 
     if cam.x < windowW/2 then
         cam.x = windowW/2
     end
-
     if cam.y < windowH/2 then
         cam.y = windowH/2
     end
-
-    local mapH = gameMap.height * gameMap.tileheight * map.scale
-
+    if cam.x > (mapW - windowW/2) then
+        cam.x = (mapW - windowW/2)
+    end
     if cam.y > (mapH - windowH/2) then
         cam.y = (mapH - windowH/2)
     end
