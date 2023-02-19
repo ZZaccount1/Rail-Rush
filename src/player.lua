@@ -1,7 +1,7 @@
 player = {}
 
-player.x = 0
-player.y = 0
+player.x = 173
+player.y = 173
 player.speed = 0.5
 player.scale = 3.2
 
@@ -10,9 +10,12 @@ player.animations = {}
 
 player.facingRight = true
 
+local tileSizeX = 11
+local tileSizeY = 15
+
 function player:load()
     player.spriteSheet = love.graphics.newImage('sprites/player.png')
-    player.grid = anim8.newGrid(11, 15, player.spriteSheet:getWidth(), player.spriteSheet:getHeight())
+    player.grid = anim8.newGrid(tileSizeX, tileSizeY, player.spriteSheet:getWidth(), player.spriteSheet:getHeight())
 
     player.animations.speed = 0.2
     player.animations.idleR = anim8.newAnimation(player.grid('1-3', 1), player.animations.speed)
@@ -32,9 +35,21 @@ function player:update(dt)
 
     if love.keyboard.isDown("up") or love.keyboard.isDown("w") then
         player.y = player.y - player.speed
+        
+        if player.facingRight then
+            player.anim = player.animations.right
+        else
+            player.anim = player.animations.left
+        end 
     end
     if love.keyboard.isDown("down") or love.keyboard.isDown("s") then
         player.y = player.y + player.speed
+
+        if player.facingRight then
+            player.anim = player.animations.right
+        else
+            player.anim = player.animations.left
+        end
     end
     if love.keyboard.isDown("right") or love.keyboard.isDown("d") then
         player.x = player.x + player.speed
@@ -48,10 +63,28 @@ function player:update(dt)
     end
 
     player.anim:update(dt)
+
+    cam:lookAt(player.x + (tileSizeX/2), player.y + (tileSizeY/2))
+
+    if cam.x < windowW/2 then
+        cam.x = windowW/2
+    end
+
+    if cam.y < windowH/2 then
+        cam.y = windowH/2
+    end
+
+    local mapH = gameMap.height * gameMap.tileheight * map.scale
+
+    if cam.y > (mapH - windowH/2) then
+        cam.y = (mapH - windowH/2)
+    end
 end
 
 function player:draw()
-    player.anim:draw(player.spriteSheet, player.x, player.y, nil, player.scale)
+    cam:attach()
+        player.anim:draw(player.spriteSheet, player.x, player.y, nil, player.scale)
+    cam:detach()
 end
 
 return
