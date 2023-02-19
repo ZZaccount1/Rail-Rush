@@ -1,6 +1,8 @@
 windowW = 0
 windowH = 0
 
+globalScale = 3.2
+
 function love.load()
     -- Disable smooth scaling
     love.graphics.setDefaultFilter("nearest", "nearest")
@@ -14,10 +16,18 @@ function love.load()
     af = require("libs.autofuncs")
     sti = require("libs.sti")
     camera = require("libs.camera")
+    object = require("libs.classic")
 
     af.load("src")
 
     cam = camera()
+
+    dwayne = rock(10,10)
+end
+
+function love.draw()
+    af:draw()
+    dwayne:draw()
 end
 
 function love.keypressed(k, sc, r)
