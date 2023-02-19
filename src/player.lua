@@ -2,7 +2,7 @@ player = {}
 
 player.x = 173
 player.y = 173
-player.speed = 0.5
+player.speed = 0.5 * 500
 player.scale = 3.2
 
 local rectangleSize = 32
@@ -24,9 +24,15 @@ function player:load()
     player.animations.left  = anim8.newAnimation(player.grid('1-4', 4), player.animations.speed)
 
     player.anim = player.animations.idleR
+
+    player.collider = worldMap:newBSGRectangleCollider(player.x, player.y, 11*globalScale, 15*globalScale, 7)
+    player.collider:setFixedRotation(true)
 end
 
 function player:update(dt)
+    local vx = 0
+    local vy = 0
+
     if player.facingRight then
         player.anim = player.animations.idleR
     else
@@ -34,7 +40,7 @@ function player:update(dt)
     end
 
     if love.keyboard.isDown("up") or love.keyboard.isDown("w") then
-        player.y = player.y - player.speed
+        vy = -player.speed
         
         if player.facingRight then
             player.anim = player.animations.right
@@ -43,7 +49,7 @@ function player:update(dt)
         end 
     end
     if love.keyboard.isDown("down") or love.keyboard.isDown("s") then
-        player.y = player.y + player.speed
+        vy = player.speed
 
         if player.facingRight then
             player.anim = player.animations.right
@@ -52,17 +58,22 @@ function player:update(dt)
         end
     end
     if love.keyboard.isDown("right") or love.keyboard.isDown("d") then
-        player.x = player.x + player.speed
+        vx = player.speed
         player.facingRight = true
         player.anim = player.animations.right
     end
     if love.keyboard.isDown("left") or love.keyboard.isDown("a") then
-        player.x = player.x - player.speed    
+        vx = -player.speed    
         player.facingRight = false
         player.anim = player.animations.left
     end
 
     player.anim:update(dt)
+
+    
+    player.x = player.collider:getX() - ((11*globalScale)/2)
+    player.y = player.collider:getY() - ((15*globalScale)/2)
+    player.collider:setLinearVelocity(vx, vy)
 
     cam:lookAt(player.x + (tileSizeX/2), player.y + (tileSizeY/2))
     
@@ -96,4 +107,5 @@ return
     load = function(...) return player:load(...) end,
     update = function(...) return player:update(...) end,
     draw = function(...) return player:draw(...) end,
+    order = 2
 }

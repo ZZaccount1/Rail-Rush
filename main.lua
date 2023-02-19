@@ -3,6 +3,8 @@ windowH = 0
 
 globalScale = 3.2
 
+debug = true
+
 function love.load()
     -- Disable smooth scaling
     love.graphics.setDefaultFilter("nearest", "nearest")
@@ -17,6 +19,7 @@ function love.load()
     sti = require("libs.sti")
     camera = require("libs.camera")
     object = require("libs.classic")
+    wf = require("libs.windfield")
 
     af.load("src")
 
@@ -28,6 +31,7 @@ end
 function love.draw()
     af:draw()
     dwayne:draw()
+    world:draw()
 end
 
 function love.keypressed(k, sc, r)

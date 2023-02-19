@@ -16,7 +16,8 @@ function map:load()
             table.insert(map.entities, entity)
         end
 	end
-    print("hey",table.getn(map.entities))
+
+    world:generateSolid()
 end
 
 function map:draw()
