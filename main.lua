@@ -3,6 +3,7 @@ windowH = 0
 
 globalScale = 3.2
 
+release = false
 debug = true
 
 function love.load()
@@ -28,11 +29,20 @@ end
 
 function love.draw()
     af:draw()
-    world:draw()
+
+    if debug then
+        world:draw()
+    end
 end
 
 function love.keypressed(k, sc, r)
     if k == "escape" then
         love.event.quit()
+    end
+
+    if not release then
+        if k == "i" then
+            debug = not debug
+        end
     end
 end
