@@ -4,7 +4,7 @@ windowH = 0
 globalScale = 3.2
 
 release = false
-debug = true
+debug = false
 
 function love.load()
     -- Disable smooth scaling
