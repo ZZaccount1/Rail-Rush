@@ -60,10 +60,14 @@ function player:update(dt)
     end
 
     player.anim:update(dt)
+
+    cam:lookAt(player.x, player.y)
 end
 
 function player:draw()
-    player.anim:draw(player.spriteSheet, player.x, player.y, nil, player.scale)
+    cam:attach()
+        player.anim:draw(player.spriteSheet, player.x, player.y, nil, player.scale)
+    cam:detach()
 end
 
 return

@@ -7,7 +7,12 @@ function map:load()
 end
 
 function map:draw()
-    gameMap:draw(0,0,scale)
+    cam:attach()
+        love.graphics.scale(scale)
+        gameMap:drawLayer(gameMap.layers["ground"])
+        gameMap:drawLayer(gameMap.layers["railway"])
+        love.graphics.scale(1)
+        cam:detach()
 end
 
 return
