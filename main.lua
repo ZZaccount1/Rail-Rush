@@ -2,8 +2,9 @@ function love.load()
     -- Disable smooth scaling
     love.graphics.setDefaultFilter("nearest", "nearest")
 
-    anim8 = require('libs.anim8')
+    anim8 = require("libs.anim8")
     af = require("libs.autofuncs")
+    sti = require("libs.sti")
 
     af.load("src")
 end
