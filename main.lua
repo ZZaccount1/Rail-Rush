@@ -46,3 +46,9 @@ function love.keypressed(k, sc, r)
         end
     end
 end
+
+function love.mousepressed(x, y, button, istouch)
+    if button == 1 then
+       map:onClick(x,y)
+    end
+ end

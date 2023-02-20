@@ -9,7 +9,7 @@ function map:load()
 
     for i,v in ipairs(gameMap.layers["entity"].objects) do
 		if v.type == "stone" then
-			local entity = rock(v.x, v.y)
+			local entity = rock(v.x, v.y, i)
             table.insert(map.entities, entity)
         elseif v.type == "tree" then
             local entity = tree(v.x, v.y)
@@ -33,6 +33,14 @@ function map:draw()
     
     love.graphics.scale(1)
     cam:detach()
+end
+
+function map:onClick(x,y)
+    for i in ipairs(map.entities) do
+        if map.entities[i].onClick then
+            map.entities[i]:onClick(x,y)
+        end
+    end
 end
 
 return
