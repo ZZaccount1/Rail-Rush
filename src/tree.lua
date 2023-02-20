@@ -6,9 +6,11 @@ function tree:new(x, y)
     self.w = 16 * globalScale
     self.h = 16 * globalScale
     self.spriteSheet = love.graphics.newImage("sprites/props.png")
-    self.quad = love.graphics.newQuad(16*0, 16*1, 16*1, 16*3, self.spriteSheet)
+    self.quad = {}
+    self.quad.trunk = love.graphics.newQuad(16*0, 16*3, 16*1, 16*1, self.spriteSheet)
+    self.quad.top = love.graphics.newQuad(16*0, 16*1, 16*1, 16*2, self.spriteSheet)
 
-    self.collider = worldMap:newRectangleCollider(self.x*globalScale, (self.y+16*2)*globalScale, 16*globalScale, 16*globalScale)
+    self.collider = worldMap:newRectangleCollider(self.x*globalScale, (self.y+16*1)*globalScale, 16*globalScale, 16*globalScale)
     self.collider:setType("static")
 
     self.hp = 3
@@ -17,8 +19,18 @@ end
 
 function tree:draw()
     if not self.dead then
-        love.graphics.draw(self.spriteSheet, self.quad, self.x, self.y)
+        love.graphics.draw(self.spriteSheet, self.quad.trunk, self.x, self.y+16)
     end
+end
+
+function tree:drawAbove()
+    cam:attach()
+    love.graphics.scale(map.scale)
+    if not self.dead then
+        love.graphics.draw(self.spriteSheet, self.quad.top, self.x, self.y-16)
+    end
+    love.graphics.scale(1)
+    cam:detach()
 end
 
 function tree:onClick(x,y)

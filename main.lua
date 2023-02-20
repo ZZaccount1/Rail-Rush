@@ -29,6 +29,11 @@ end
 
 function love.draw()
     af:draw()
+    for i,v in ipairs(map.entities) do
+        if map.entities[i].drawAbove then
+            map.entities[i]:drawAbove()
+        end
+    end
 
     if debug then
         world:draw()
