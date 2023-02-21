@@ -1,5 +1,7 @@
 rwTile = object.extend(object)
 
+local interactionRadius = 90
+
 function rwTile:new(x, y, orientation)
     self.x = x
     self.y = y
@@ -36,11 +38,17 @@ function rwTile:onClick(x,y)
 
     -- Check if the mouse click was within the boundaries of the tree
     if mouseX >= selfX and mouseX <= selfX + self.w and mouseY >= selfY and mouseY <= selfY + self.h then
-        print("rwTile CLICK!")
-        if ui.stoneAmount > 0 and ui.woodAmount > 0 then
-            self.builded = true
-            ui.stoneAmount = ui.stoneAmount - 1
-            ui.woodAmount = ui.woodAmount - 1
-        end 
+        local distance = math.sqrt((selfX + 16/2 - player.x+(11/2)*player.scale)^2 + (selfY - player.y+(15/2)*player.scale)^2)
+        print(distance)
+
+        if distance <= interactionRadius then
+        
+            print("rwTile CLICK!")
+            if ui.stoneAmount > 0 and ui.woodAmount > 0 then
+                self.builded = true
+                ui.stoneAmount = ui.stoneAmount - 1
+                ui.woodAmount = ui.woodAmount - 1
+            end 
+        end
     end
 end
