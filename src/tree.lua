@@ -44,7 +44,7 @@ function tree:onClick(x,y)
     local mouseX, mouseY = cam:worldCoords(x, y)
 
     local selfX = self.x * globalScale
-    local selfY = (self.y+16*2) * globalScale
+    local selfY = (self.y+16) * globalScale
 
     -- Check if the mouse click was within the boundaries of the tree
     if mouseX >= selfX and mouseX <= selfX + self.w and mouseY >= selfY and mouseY <= selfY + self.h then
