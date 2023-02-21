@@ -13,6 +13,8 @@ player.facingRight = true
 local tileSizeX = 11
 local tileSizeY = 15
 
+local yOffset = 5*globalScale
+
 function player:load()
     player.spriteSheet = love.graphics.newImage('sprites/player.png')
     player.grid = anim8.newGrid(tileSizeX, tileSizeY, player.spriteSheet:getWidth(), player.spriteSheet:getHeight())
@@ -25,7 +27,7 @@ function player:load()
 
     player.anim = player.animations.idleR
 
-    player.collider = worldMap:newBSGRectangleCollider(player.x, player.y, 11*globalScale, 15*globalScale, 7)
+    player.collider = worldMap:newBSGRectangleCollider(player.x, player.y + yOffset, 11*globalScale, 5*globalScale, 3)
     player.collider:setFixedRotation(true)
 end
 
@@ -96,7 +98,7 @@ end
 
 function player:draw()
     cam:attach()
-        player.anim:draw(player.spriteSheet, player.x, player.y, nil, player.scale)
+        player.anim:draw(player.spriteSheet, player.x, player.y-yOffset, nil, player.scale)
     cam:detach()
 end
 

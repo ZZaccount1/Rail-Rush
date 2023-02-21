@@ -10,7 +10,10 @@ function tree:new(x, y)
     self.quad.trunk = love.graphics.newQuad(16*0, 16*3, 16*1, 16*1, self.spriteSheet)
     self.quad.top = love.graphics.newQuad(16*0, 16*1, 16*1, 16*2, self.spriteSheet)
 
-    self.collider = worldMap:newRectangleCollider(self.x*globalScale, (self.y+16*1)*globalScale, 16*globalScale, 16*globalScale)
+    --self.collider = worldMap:newRectangleCollider(self.x*globalScale, (self.y+16*1)*globalScale, 16*globalScale, 16*globalScale)
+    self.collider = worldMap:newPolygonCollider({self.x*globalScale, (self.y+16*1)*globalScale,
+                                                 self.x*globalScale + 16*globalScale, (self.y+16*1)*globalScale,
+                                                 self.x*globalScale + (16*globalScale)/2, (self.y+16*1)*globalScale + 16*globalScale})
     self.collider:setType("static")
 
     self.hp = 3
