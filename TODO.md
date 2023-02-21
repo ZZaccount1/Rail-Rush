@@ -6,7 +6,8 @@
 - [ ] SFX
 
 # Not Core
-- [ ] Pickaxe
+- [ ] Pickaxe and animation
+- [ ] Entities interaction animations(eg tree shaking)
 - [ ] Move things like player 11,15(player sprite size) to variables cuz its used in multiple scripts and it gets messy
 
 # DONE
