@@ -15,13 +15,8 @@ function map:load()
             local entity = tree(v.x, v.y)
             table.insert(map.entities, entity)
         elseif v.class == "emptyRailway" then
-            local orientation = v.properties["orientation"]
-            print(orientation)
-            --[[
-            print("yea", v.properties["orientation"])
             local entity = rwTile(v.x, v.y, v.properties["orientation"])
             table.insert(map.entities, entity)
-            ]]
         end
 	end
 
