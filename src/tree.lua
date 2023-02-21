@@ -1,5 +1,7 @@
 tree = object.extend(object)
 
+local interactionRadius = 50
+
 function tree:new(x, y)
     self.x = x
     self.y = y
@@ -48,8 +50,12 @@ function tree:onClick(x,y)
 
     -- Check if the mouse click was within the boundaries of the tree
     if mouseX >= selfX and mouseX <= selfX + self.w and mouseY >= selfY and mouseY <= selfY + self.h then
-        print("TREE CLICK!",self.tableID)
-        self.hp = self.hp - 1
+        local distance = math.sqrt((selfX + 16/2 - player.x+(11/2)*player.scale)^2 + (selfY - player.y+(15/2)*player.scale)^2)
+
+        if distance <= interactionRadius then
+            print("TREE CLICK!",self.tableID)
+            self.hp = self.hp - 1
+        end
     end
 
     if self.hp <= 0 then

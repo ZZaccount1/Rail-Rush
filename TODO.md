@@ -1,8 +1,9 @@
 # Soon
-- [ ] Change the collider size(so player will be able to be closer to the props, instead of colliding with that big 16x16 collider)
+- [ ] Move things like player 11,15(player sprite size) to variables cuz its used in multiple scripts and it gets messy
 - [ ] Little tutorial(introduction about how to play the game. at the beggining the will be an arrow showing on the rock and on the tree and after chopping them there will appear an arrow above the empty rail tile)
 
 # DONE
+- [x] Change the collider size(so player will be able to be closer to the props, instead of colliding with that big 16x16 collider)
 - [x] Make the player to be behind the top 2 tiles of the tree (just make a new layer in the tiled and name it "above the player", and instead of drawing the full tree in the entity layer, draw only the trunk tile)
 
 # Additional stuff(if i will have enough time)
