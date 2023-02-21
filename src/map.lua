@@ -5,15 +5,23 @@ map.scale = 3.2
 map.entities = {}
 
 function map:load()
-    gameMap = sti("maps/mainMap.lua")
+    gameMap = sti("maps/default.lua")
 
     for i,v in ipairs(gameMap.layers["entity"].objects) do
-		if v.type == "stone" then
+		if v.class == "stone" then
 			local entity = rock(v.x, v.y, i)
             table.insert(map.entities, entity)
-        elseif v.type == "tree" then
+        elseif v.class == "tree" then
             local entity = tree(v.x, v.y)
             table.insert(map.entities, entity)
+        elseif v.class == "emptyRailway" then
+            local orientation = v.properties["orientation"]
+            print(orientation)
+            --[[
+            print("yea", v.properties["orientation"])
+            local entity = rwTile(v.x, v.y, v.properties["orientation"])
+            table.insert(map.entities, entity)
+            ]]
         end
 	end
 
