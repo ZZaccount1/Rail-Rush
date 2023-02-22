@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="60" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="92">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="60" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="171">
+ <editorsettings>
+  <export target="default.lua" format="lua"/>
+ </editorsettings>
  <tileset firstgid="1" name="tiles" tilewidth="16" tileheight="16" tilecount="16" columns="4">
   <image source="../sprites/tiles.png" width="64" height="64"/>
  </tileset>
@@ -56,37 +59,37 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19,20,20,20,20,20,20,20,20,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19,20,0,20,20,0,20,20,20,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19,20,20,20,20,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,20,20,20,20,20,20,20,21,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,20,20,20,0,20,20,20,21,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,
-0,0,0,0,0,0,0,0,19,20,20,21,0,0,0,26,0,0,0,0,26,0,0,0,0,0,0,19,20,20,20,20,20,20,20,20,20,20,20,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,
+0,0,0,0,0,0,0,0,19,20,20,21,0,0,0,26,0,0,0,0,26,0,0,0,0,0,0,19,20,20,20,20,20,0,20,20,20,20,20,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,
 0,0,0,0,0,0,0,0,26,0,0,26,0,0,0,26,0,0,0,0,26,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,26,0,0,29,20,0,20,31,0,0,0,0,26,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,19,20,20,21,0,0,26,0,0,0,0,0,
 0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,26,0,0,26,0,0,26,0,0,0,0,0,
-0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,29,20,20,21,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,26,0,0,26,0,0,26,0,0,0,0,0,
-0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,19,20,20,31,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,26,0,0,0,19,20,20,20,20,31,0,0,26,0,0,26,0,0,0,0,0,
+0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,29,20,20,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,26,0,0,26,0,0,0,0,0,
+0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,19,20,20,31,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,26,0,0,0,19,20,0,20,20,31,0,0,26,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,19,20,20,31,0,0,0,26,0,0,0,0,0,0,0,26,0,0,26,0,0,0,0,0,
 0,0,0,0,20,20,20,20,31,0,0,19,20,20,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,26,0,0,0,0,0,0,26,0,0,0,0,0,0,0,26,0,0,26,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,26,0,0,26,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,26,0,0,0,0,0,0,26,0,0,0,0,0,0,0,26,0,0,26,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,26,0,0,26,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,26,0,0,0,0,0,0,26,0,0,0,0,0,0,0,26,0,0,26,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,26,0,0,26,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,26,0,0,26,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,26,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,26,0,0,29,20,20,31,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,26,0,0,0,0,0,0,26,0,0,0,0,0,0,0,26,0,0,26,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,19,20,31,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,26,0,0,0,0,0,0,29,20,20,20,21,0,0,0,26,0,0,26,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,26,0,0,0,26,0,0,26,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19,20,20,31,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,26,0,0,0,26,0,0,26,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,26,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19,20,20,31,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,26,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,29,20,21,0,0,0,0,0,0,0,0,26,0,0,0,26,0,0,26,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,19,20,20,31,0,0,0,26,0,0,26,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,29,20,20,20,20,21,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,26,0,0,0,0,0,0,26,0,0,26,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,19,20,20,31,0,0,0,0,0,0,26,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,29,20,20,20,20,21,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,26,0,0,26,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,26,0,0,0,0,0,0,29,20,20,31,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,19,20,0,20,20,31,0,0,0,0,19,20,20,20,21,0,0,0,26,0,0,0,0,0,0,19,20,20,20,31,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,19,20,0,20,20,31,0,0,0,0,19,20,0,20,21,0,0,0,26,0,0,0,0,0,0,19,20,0,20,31,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,26,0,0,0,26,0,0,0,26,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,26,0,0,0,26,0,0,0,26,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,26,0,0,0,26,0,0,0,26,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,26,0,0,0,26,0,0,0,26,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,29,20,20,20,0,20,20,20,20,20,31,0,0,0,29,20,20,20,31,0,0,0,0,0,0,29,20,20,20,20,20,20,20,20,20,31,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,26,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,29,20,20,20,0,20,20,20,20,20,31,0,0,0,29,20,20,20,31,0,0,0,0,0,0,29,20,20,20,0,20,20,20,20,20,31,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -95,78 +98,411 @@
 </data>
  </layer>
  <objectgroup color="#aa00ff" id="5" name="entity">
-  <object id="17" name="Tree" type="tree" x="576" y="96" width="16" height="48"/>
-  <object id="21" name="Tree" type="tree" x="208" y="80" width="16" height="48"/>
-  <object id="18" name="Stone" type="stone" x="96" y="128" width="16" height="16"/>
-  <object id="22" name="Tree" type="tree" x="704" y="48" width="16" height="48"/>
-  <object id="23" name="Tree" type="tree" x="96" y="192" width="16" height="48"/>
-  <object id="24" name="Tree" type="tree" x="64" y="80" width="16" height="48"/>
-  <object id="25" name="Tree" type="tree" x="304" y="48" width="16" height="48"/>
-  <object id="26" name="Tree" type="tree" x="368" y="112" width="16" height="48"/>
-  <object id="27" name="Tree" type="tree" x="400" y="224" width="16" height="48"/>
-  <object id="28" name="Tree" type="tree" x="352" y="288" width="16" height="48"/>
-  <object id="29" name="Tree" type="tree" x="288" y="384" width="16" height="48"/>
-  <object id="30" name="Tree" type="tree" x="224" y="336" width="16" height="48"/>
-  <object id="31" name="Tree" type="tree" x="384" y="416" width="16" height="48"/>
-  <object id="32" name="Tree" type="tree" x="416" y="336" width="16" height="48"/>
-  <object id="35" name="Tree" type="tree" x="96" y="352" width="16" height="48"/>
-  <object id="36" name="Tree" type="tree" x="160" y="208" width="16" height="48"/>
-  <object id="37" name="Tree" type="tree" x="224" y="240" width="16" height="48"/>
-  <object id="38" name="Tree" type="tree" x="288" y="160" width="16" height="48"/>
-  <object id="39" name="Tree" type="tree" x="64" y="480" width="16" height="48"/>
-  <object id="40" name="Tree" type="tree" x="464" y="432" width="16" height="48"/>
-  <object id="41" name="Tree" type="tree" x="544" y="352" width="16" height="48"/>
-  <object id="42" name="Tree" type="tree" x="496" y="192" width="16" height="48"/>
-  <object id="43" name="Tree" type="tree" x="464" y="80" width="16" height="48"/>
-  <object id="44" name="Tree" type="tree" x="656" y="192" width="16" height="48"/>
-  <object id="45" name="Tree" type="tree" x="736" y="176" width="16" height="48"/>
-  <object id="46" name="Tree" type="tree" x="640" y="352" width="16" height="48"/>
-  <object id="47" name="Tree" type="tree" x="672" y="464" width="16" height="48"/>
-  <object id="48" name="Tree" type="tree" x="736" y="480" width="16" height="48"/>
-  <object id="49" name="Tree" type="tree" x="784" y="304" width="16" height="48"/>
-  <object id="50" name="Tree" type="tree" x="848" y="208" width="16" height="48"/>
-  <object id="51" name="Tree" type="tree" x="864" y="496" width="16" height="48"/>
-  <object id="52" name="Stone" type="stone" x="64" y="240" width="16" height="16"/>
-  <object id="53" name="Stone" type="stone" x="80" y="176" width="16" height="16"/>
-  <object id="54" name="Stone" type="stone" x="176" y="128" width="16" height="16"/>
-  <object id="55" name="Stone" type="stone" x="128" y="80" width="16" height="16"/>
-  <object id="56" name="Stone" type="stone" x="352" y="64" width="16" height="16"/>
-  <object id="57" name="Stone" type="stone" x="416" y="112" width="16" height="16"/>
-  <object id="58" name="Stone" type="stone" x="352" y="208" width="16" height="16"/>
-  <object id="59" name="Stone" type="stone" x="320" y="320" width="16" height="16"/>
-  <object id="60" name="Stone" type="stone" x="352" y="384" width="16" height="16"/>
-  <object id="61" name="Stone" type="stone" x="256" y="416" width="16" height="16"/>
-  <object id="62" name="Stone" type="stone" x="288" y="464" width="16" height="16"/>
-  <object id="63" name="Stone" type="stone" x="224" y="512" width="16" height="16"/>
-  <object id="64" name="Stone" type="stone" x="192" y="384" width="16" height="16"/>
-  <object id="65" name="Stone" type="stone" x="576" y="224" width="16" height="16"/>
-  <object id="66" name="Stone" type="stone" x="544" y="256" width="16" height="16"/>
-  <object id="67" name="Stone" type="stone" x="512" y="432" width="16" height="16"/>
-  <object id="68" name="Stone" type="stone" x="512" y="352" width="16" height="16"/>
-  <object id="69" name="Stone" type="stone" x="528" y="288" width="16" height="16"/>
-  <object id="70" name="Stone" type="stone" x="560" y="432" width="16" height="16"/>
-  <object id="71" name="Stone" type="stone" x="496" y="512" width="16" height="16"/>
-  <object id="72" name="Stone" type="stone" x="528" y="560" width="16" height="16"/>
-  <object id="73" name="Stone" type="stone" x="592" y="512" width="16" height="16"/>
-  <object id="74" name="Stone" type="stone" x="704" y="384" width="16" height="16"/>
-  <object id="75" name="Stone" type="stone" x="640" y="112" width="16" height="16"/>
-  <object id="76" name="Stone" type="stone" x="816" y="96" width="16" height="16"/>
-  <object id="77" name="Stone" type="stone" x="800" y="512" width="16" height="16"/>
-  <object id="78" name="Stone" type="stone" x="784" y="400" width="16" height="16"/>
-  <object id="79" name="Stone" type="stone" x="736" y="304" width="16" height="16"/>
-  <object id="84" name="Empty Railway" type="emptyRailway" x="128" y="192" width="16" height="16"/>
-  <object id="85" name="Empty Railway" type="emptyRailway" x="208" y="208" width="16" height="16"/>
-  <object id="86" name="Empty Railway" type="emptyRailway" x="240" y="144" width="16" height="16"/>
-  <object id="87" name="Empty Railway" type="emptyRailway" x="320" y="192" width="16" height="16"/>
-  <object id="88" name="Empty Railway" type="emptyRailway" x="272" y="288" width="16" height="16"/>
-  <object id="89" name="Empty Railway" type="emptyRailway" x="144" y="384" width="16" height="16"/>
-  <object id="90" name="Empty Railway" type="emptyRailway" x="176" y="480" width="16" height="16"/>
-  <object id="91" name="Empty Railway" type="emptyRailway" x="208" y="544" width="16" height="16"/>
+  <object id="17" name="Tree" class="tree" x="576" y="96" width="16" height="48"/>
+  <object id="21" name="Tree" class="tree" x="208" y="80" width="16" height="48"/>
+  <object id="18" name="Stone" class="stone" x="96" y="128" width="16" height="16"/>
+  <object id="22" name="Tree" class="tree" x="704" y="48" width="16" height="48"/>
+  <object id="23" name="Tree" class="tree" x="96" y="192" width="16" height="48"/>
+  <object id="24" name="Tree" class="tree" x="64" y="80" width="16" height="48"/>
+  <object id="25" name="Tree" class="tree" x="304" y="48" width="16" height="48"/>
+  <object id="26" name="Tree" class="tree" x="368" y="112" width="16" height="48"/>
+  <object id="27" name="Tree" class="tree" x="400" y="224" width="16" height="48"/>
+  <object id="28" name="Tree" class="tree" x="352" y="288" width="16" height="48"/>
+  <object id="29" name="Tree" class="tree" x="288" y="384" width="16" height="48"/>
+  <object id="30" name="Tree" class="tree" x="224" y="336" width="16" height="48"/>
+  <object id="31" name="Tree" class="tree" x="384" y="416" width="16" height="48"/>
+  <object id="32" name="Tree" class="tree" x="416" y="336" width="16" height="48"/>
+  <object id="35" name="Tree" class="tree" x="96" y="352" width="16" height="48"/>
+  <object id="36" name="Tree" class="tree" x="160" y="208" width="16" height="48"/>
+  <object id="37" name="Tree" class="tree" x="224" y="240" width="16" height="48"/>
+  <object id="38" name="Tree" class="tree" x="288" y="160" width="16" height="48"/>
+  <object id="39" name="Tree" class="tree" x="64" y="480" width="16" height="48"/>
+  <object id="40" name="Tree" class="tree" x="464" y="432" width="16" height="48"/>
+  <object id="41" name="Tree" class="tree" x="544" y="352" width="16" height="48"/>
+  <object id="42" name="Tree" class="tree" x="496" y="192" width="16" height="48"/>
+  <object id="43" name="Tree" class="tree" x="464" y="80" width="16" height="48"/>
+  <object id="44" name="Tree" class="tree" x="656" y="192" width="16" height="48"/>
+  <object id="45" name="Tree" class="tree" x="736" y="176" width="16" height="48"/>
+  <object id="46" name="Tree" class="tree" x="640" y="352" width="16" height="48"/>
+  <object id="47" name="Tree" class="tree" x="672" y="464" width="16" height="48"/>
+  <object id="48" name="Tree" class="tree" x="736" y="480" width="16" height="48"/>
+  <object id="49" name="Tree" class="tree" x="784" y="304" width="16" height="48"/>
+  <object id="50" name="Tree" class="tree" x="848" y="208" width="16" height="48"/>
+  <object id="51" name="Tree" class="tree" x="864" y="496" width="16" height="48"/>
+  <object id="52" name="Stone" class="stone" x="64" y="240" width="16" height="16"/>
+  <object id="53" name="Stone" class="stone" x="80" y="176" width="16" height="16"/>
+  <object id="54" name="Stone" class="stone" x="176" y="128" width="16" height="16"/>
+  <object id="55" name="Stone" class="stone" x="128" y="80" width="16" height="16"/>
+  <object id="56" name="Stone" class="stone" x="352" y="64" width="16" height="16"/>
+  <object id="57" name="Stone" class="stone" x="416" y="112" width="16" height="16"/>
+  <object id="58" name="Stone" class="stone" x="352" y="208" width="16" height="16"/>
+  <object id="59" name="Stone" class="stone" x="320" y="320" width="16" height="16"/>
+  <object id="60" name="Stone" class="stone" x="352" y="384" width="16" height="16"/>
+  <object id="61" name="Stone" class="stone" x="256" y="416" width="16" height="16"/>
+  <object id="62" name="Stone" class="stone" x="288" y="464" width="16" height="16"/>
+  <object id="63" name="Stone" class="stone" x="224" y="512" width="16" height="16"/>
+  <object id="64" name="Stone" class="stone" x="192" y="384" width="16" height="16"/>
+  <object id="65" name="Stone" class="stone" x="576" y="224" width="16" height="16"/>
+  <object id="66" name="Stone" class="stone" x="544" y="256" width="16" height="16"/>
+  <object id="67" name="Stone" class="stone" x="512" y="432" width="16" height="16"/>
+  <object id="68" name="Stone" class="stone" x="512" y="352" width="16" height="16"/>
+  <object id="69" name="Stone" class="stone" x="528" y="288" width="16" height="16"/>
+  <object id="70" name="Stone" class="stone" x="560" y="432" width="16" height="16"/>
+  <object id="71" name="Stone" class="stone" x="496" y="512" width="16" height="16"/>
+  <object id="72" name="Stone" class="stone" x="528" y="560" width="16" height="16"/>
+  <object id="73" name="Stone" class="stone" x="592" y="512" width="16" height="16"/>
+  <object id="74" name="Stone" class="stone" x="704" y="384" width="16" height="16"/>
+  <object id="75" name="Stone" class="stone" x="640" y="112" width="16" height="16"/>
+  <object id="76" name="Stone" class="stone" x="816" y="96" width="16" height="16"/>
+  <object id="77" name="Stone" class="stone" x="800" y="512" width="16" height="16"/>
+  <object id="78" name="Stone" class="stone" x="784" y="400" width="16" height="16"/>
+  <object id="79" name="Stone" class="stone" x="736" y="304" width="16" height="16"/>
+  <object id="84" name="Empty Railway" class="emptyRailway" x="128" y="192" width="16" height="16"/>
+  <object id="85" name="Empty Railway" class="emptyRailway" x="208" y="208" width="16" height="16">
+   <properties>
+    <property name="orientation" value="h"/>
+   </properties>
+  </object>
+  <object id="86" name="Empty Railway" class="emptyRailway" x="240" y="144" width="16" height="16"/>
+  <object id="87" name="Empty Railway" class="emptyRailway" x="320" y="192" width="16" height="16"/>
+  <object id="88" name="Empty Railway" class="emptyRailway" x="272" y="288" width="16" height="16"/>
+  <object id="89" name="Empty Railway" class="emptyRailway" x="144" y="384" width="16" height="16"/>
+  <object id="90" name="Empty Railway" class="emptyRailway" x="176" y="480" width="16" height="16">
+   <properties>
+    <property name="orientation" value="h"/>
+   </properties>
+  </object>
+  <object id="91" name="Empty Railway" class="emptyRailway" x="208" y="544" width="16" height="16">
+   <properties>
+    <property name="orientation" value="h"/>
+   </properties>
+  </object>
+  <object id="92" name="Start" class="minecartStart" x="64" y="288" width="16" height="16">
+   <properties>
+    <property name="startOrientation" value="d"/>
+   </properties>
+  </object>
+  <object id="93" name="Railway Trigger" class="railwayTrigger" x="144" y="288" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="w"/>
+   </properties>
+  </object>
+  <object id="94" name="Railway Trigger" class="railwayTrigger" x="128" y="144" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="d"/>
+   </properties>
+  </object>
+  <object id="95" name="Railway Trigger" class="railwayTrigger" x="192" y="160" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="s"/>
+   </properties>
+  </object>
+  <object id="96" name="Railway Trigger" class="railwayTrigger" x="176" y="224" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="d"/>
+   </properties>
+  </object>
+  <object id="97" name="Railway Trigger" class="railwayTrigger" x="256" y="208" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="w"/>
+   </properties>
+  </object>
+  <object id="98" name="Railway Trigger" class="railwayTrigger" x="240" y="96" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="d"/>
+   </properties>
+  </object>
+  <object id="99" name="Railway Trigger" class="railwayTrigger" x="336" y="112" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="s"/>
+   </properties>
+  </object>
+  <object id="100" name="Railway Trigger" class="railwayTrigger" x="320" y="272" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="a"/>
+   </properties>
+  </object>
+  <object id="101" name="Railway Trigger" class="railwayTrigger" x="256" y="256" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="s"/>
+   </properties>
+  </object>
+  <object id="102" name="Railway Trigger" class="railwayTrigger" x="272" y="352" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="a"/>
+   </properties>
+  </object>
+  <object id="103" name="Railway Trigger" class="railwayTrigger" x="208" y="336" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="w"/>
+   </properties>
+  </object>
+  <object id="106" name="Empty Railway" class="emptyRailway" x="304" y="528" width="16" height="16"/>
+  <object id="107" name="Empty Railway" class="emptyRailway" x="336" y="480" width="16" height="16">
+   <properties>
+    <property name="orientation" value="h"/>
+   </properties>
+  </object>
+  <object id="108" name="Empty Railway" class="emptyRailway" x="432" y="464" width="16" height="16"/>
+  <object id="109" name="Empty Railway" class="emptyRailway" x="480" y="304" width="16" height="16"/>
+  <object id="110" name="Empty Railway" class="emptyRailway" x="528" y="160" width="16" height="16">
+   <properties>
+    <property name="orientation" value="h"/>
+   </properties>
+  </object>
+  <object id="111" name="Empty Railway" class="emptyRailway" x="624" y="240" width="16" height="16"/>
+  <object id="112" name="Empty Railway" class="emptyRailway" x="576" y="320" width="16" height="16"/>
+  <object id="113" name="Empty Railway" class="emptyRailway" x="576" y="368" width="16" height="16"/>
+  <object id="114" name="Empty Railway" class="emptyRailway" x="608" y="432" width="16" height="16"/>
+  <object id="115" name="Empty Railway" class="emptyRailway" x="576" y="480" width="16" height="16">
+   <properties>
+    <property name="orientation" value="h"/>
+   </properties>
+  </object>
+  <object id="116" name="Empty Railway" class="emptyRailway" x="608" y="544" width="16" height="16">
+   <properties>
+    <property name="orientation" value="h"/>
+   </properties>
+  </object>
+  <object id="117" name="Empty Railway" class="emptyRailway" x="704" y="496" width="16" height="16"/>
+  <object id="118" name="Empty Railway" class="emptyRailway" x="752" y="384" width="16" height="16"/>
+  <object id="119" name="Empty Railway" class="emptyRailway" x="688" y="320" width="16" height="16"/>
+  <object id="120" name="Empty Railway" class="emptyRailway" x="720" y="256" width="16" height="16">
+   <properties>
+    <property name="orientation" value="h"/>
+   </properties>
+  </object>
+  <object id="121" name="Empty Railway" class="emptyRailway" x="816" y="304" width="16" height="16"/>
+  <object id="122" name="Empty Railway" class="emptyRailway" x="816" y="416" width="16" height="16"/>
+  <object id="123" name="Empty Railway" class="emptyRailway" x="864" y="368" width="16" height="16"/>
+  <object id="124" name="Empty Railway" class="emptyRailway" x="864" y="304" width="16" height="16"/>
+  <object id="125" name="Empty Railway" class="emptyRailway" x="864" y="256" width="16" height="16"/>
+  <object id="126" name="Empty Railway" class="emptyRailway" x="864" y="192" width="16" height="16"/>
+  <object id="127" name="Empty Railway" class="emptyRailway" x="800" y="128" width="16" height="16">
+   <properties>
+    <property name="orientation" value="h"/>
+   </properties>
+  </object>
+  <object id="128" name="Empty Railway" class="emptyRailway" x="768" y="64" width="16" height="16">
+   <properties>
+    <property name="orientation" value="h"/>
+   </properties>
+  </object>
+  <object id="129" name="Empty Railway" class="emptyRailway" x="816" y="64" width="16" height="16">
+   <properties>
+    <property name="orientation" value="h"/>
+   </properties>
+  </object>
+  <object id="130" name="Railway Trigger" class="railwayTrigger" x="224" y="272" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="a"/>
+   </properties>
+  </object>
+  <object id="131" name="Railway Trigger" class="railwayTrigger" x="160" y="288" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="s"/>
+   </properties>
+  </object>
+  <object id="132" name="Railway Trigger" class="railwayTrigger" x="176" y="368" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="a"/>
+   </properties>
+  </object>
+  <object id="133" name="Railway Trigger" class="railwayTrigger" x="128" y="352" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="s"/>
+   </properties>
+  </object>
+  <object id="134" name="Railway Trigger" class="railwayTrigger" x="144" y="448" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="d"/>
+   </properties>
+  </object>
+  <object id="135" name="Railway Trigger" class="railwayTrigger" x="240" y="432" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="s"/>
+   </properties>
+  </object>
+  <object id="136" name="Railway Trigger" class="railwayTrigger" x="224" y="496" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="a"/>
+   </properties>
+  </object>
+  <object id="137" name="Railway Trigger" class="railwayTrigger" x="128" y="480" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="s"/>
+   </properties>
+  </object>
+  <object id="138" name="Railway Trigger" class="railwayTrigger" x="144" y="560" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="d"/>
+   </properties>
+  </object>
+  <object id="139" name="Railway Trigger" class="railwayTrigger" x="320" y="544" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="w"/>
+   </properties>
+  </object>
+  <object id="140" name="Railway Trigger" class="railwayTrigger" x="304" y="464" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="d"/>
+   </properties>
+  </object>
+  <object id="141" name="Railway Trigger" class="railwayTrigger" x="384" y="480" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="s"/>
+   </properties>
+  </object>
+  <object id="142" name="Railway Trigger" class="railwayTrigger" x="368" y="560" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="d"/>
+   </properties>
+  </object>
+  <object id="143" name="Railway Trigger" class="railwayTrigger" x="448" y="544" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="w"/>
+   </properties>
+  </object>
+  <object id="144" name="Railway Trigger" class="railwayTrigger" x="432" y="368" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="d"/>
+   </properties>
+  </object>
+  <object id="145" name="Railway Trigger" class="railwayTrigger" x="496" y="384" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="w"/>
+   </properties>
+  </object>
+  <object id="146" name="Railway Trigger" class="railwayTrigger" x="480" y="224" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="a"/>
+   </properties>
+  </object>
+  <object id="147" name="Railway Trigger" class="railwayTrigger" x="416" y="240" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="w"/>
+   </properties>
+  </object>
+  <object id="148" name="Railway Trigger" class="railwayTrigger" x="432" y="144" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="d"/>
+   </properties>
+  </object>
+  <object id="149" name="Railway Trigger" class="railwayTrigger" x="640" y="160" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="s"/>
+   </properties>
+  </object>
+  <object id="150" name="Railway Trigger" class="railwayTrigger" x="624" y="288" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="a"/>
+   </properties>
+  </object>
+  <object id="151" name="Railway Trigger" class="railwayTrigger" x="560" y="272" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="s"/>
+   </properties>
+  </object>
+  <object id="152" name="Railway Trigger" class="railwayTrigger" x="576" y="416" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="d"/>
+   </properties>
+  </object>
+  <object id="153" name="Railway Trigger" class="railwayTrigger" x="624" y="400" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="s"/>
+   </properties>
+  </object>
+  <object id="154" name="Railway Trigger" class="railwayTrigger" x="608" y="496" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="a"/>
+   </properties>
+  </object>
+  <object id="155" name="Railway Trigger" class="railwayTrigger" x="528" y="480" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="s"/>
+   </properties>
+  </object>
+  <object id="156" name="Railway Trigger" class="railwayTrigger" x="544" y="560" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="d"/>
+   </properties>
+  </object>
+  <object id="157" name="Railway Trigger" class="railwayTrigger" x="720" y="544" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="w"/>
+   </properties>
+  </object>
+  <object id="158" name="Railway Trigger" class="railwayTrigger" x="704" y="400" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="d"/>
+   </properties>
+  </object>
+  <object id="159" name="Railway Trigger" class="railwayTrigger" x="768" y="416" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="w"/>
+   </properties>
+  </object>
+  <object id="160" name="Railway Trigger" class="railwayTrigger" x="752" y="336" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="a"/>
+   </properties>
+  </object>
+  <object id="161" name="Railway Trigger" class="railwayTrigger" x="672" y="352" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="w"/>
+   </properties>
+  </object>
+  <object id="162" name="Railway Trigger" class="railwayTrigger" x="688" y="240" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="d"/>
+   </properties>
+  </object>
+  <object id="163" name="Railway Trigger" class="railwayTrigger" x="784" y="256" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="w"/>
+   </properties>
+  </object>
+  <object id="164" name="Railway Trigger" class="railwayTrigger" x="768" y="192" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="d"/>
+   </properties>
+  </object>
+  <object id="165" name="Railway Trigger" class="railwayTrigger" x="832" y="208" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="s"/>
+   </properties>
+  </object>
+  <object id="166" name="Railway Trigger" class="railwayTrigger" x="816" y="464" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="d"/>
+   </properties>
+  </object>
+  <object id="167" name="Railway Trigger" class="railwayTrigger" x="880" y="448" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="w"/>
+   </properties>
+  </object>
+  <object id="168" name="Railway Trigger" class="railwayTrigger" x="864" y="112" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="a"/>
+   </properties>
+  </object>
+  <object id="169" name="Railway Trigger" class="railwayTrigger" x="720" y="128" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="w"/>
+   </properties>
+  </object>
+  <object id="170" name="Railway Trigger" class="railwayTrigger" x="736" y="48" width="16" height="16">
+   <properties>
+    <property name="newOrientation" value="d"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="6" name="solid">
   <object id="1" x="0" y="0" width="960" height="48"/>
   <object id="2" x="912" y="48" width="48" height="592"/>
   <object id="3" x="0" y="576" width="912" height="64"/>
-  <object id="4" x="0" y="48" width="48" height="528"/>
+  <object id="104" x="0" y="48" width="48" height="528"/>
  </objectgroup>
 </map>

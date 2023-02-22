@@ -17,6 +17,13 @@ function map:load()
         elseif v.class == "emptyRailway" then
             local entity = rwTile(v.x, v.y, v.properties["orientation"])
             table.insert(map.entities, entity)
+            table.insert(emptyRailways, entity)
+        elseif v.class == "minecartStart" then
+            minecart.startX = v.x
+            minecart.startY = v.y
+            minecart.orientation = v.properties["startOrientation"]
+        elseif v.class == "railwayTrigger" then
+            table.insert(railwayTriggers, v)
         end
 	end
 
@@ -36,6 +43,8 @@ function map:draw()
     
     love.graphics.scale(1)
     cam:detach()
+    
+    minecart:draw()
 end
 
 function map:onClick(x,y)

@@ -6,6 +6,8 @@ globalScale = 3.2
 release = false
 debug = false
 
+lost = false
+
 function love.load()
     -- Disable smooth scaling
     love.graphics.setDefaultFilter("nearest", "nearest")
@@ -45,15 +47,27 @@ function love.keypressed(k, sc, r)
         love.event.quit()
     end
 
+    if k == "r" and lost then
+        love.event.quit("restart")
+    end
+
     if not release then
         if k == "i" then
             debug = not debug
+        elseif k == "o" then
+            minecart.speed = minecart.speed + 5
+        elseif k == "p" then
+            minecart.speed = 0
+        elseif k == "k" then
+            ui.woodAmount = 100
+            ui.stoneAmount = 100
         end
     end
 end
 
 function love.mousepressed(x, y, button, istouch)
-    if button == 1 then
+    
+    if button == 1 and not lost then
        map:onClick(x,y)
     end
  end

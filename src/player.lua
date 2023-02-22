@@ -1,7 +1,7 @@
 player = {}
 
 player.x = 173
-player.y = 173
+player.y = 1000
 player.speed = 0.5 * 500
 player.scale = 3.2
 
@@ -32,6 +32,8 @@ function player:load()
 end
 
 function player:update(dt)
+    if lost then return end
+
     local vx = 0
     local vy = 0
 
@@ -72,7 +74,6 @@ function player:update(dt)
 
     player.anim:update(dt)
 
-    
     player.x = player.collider:getX() - ((11*globalScale)/2)
     player.y = player.collider:getY() - ((15*globalScale)/2)
     player.collider:setLinearVelocity(vx, vy)

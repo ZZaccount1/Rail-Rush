@@ -5,6 +5,8 @@ function world:load()
 end
 
 function world:update(dt)
+    if lost then return end
+
     worldMap:update(dt)
 end
 
@@ -31,6 +33,5 @@ return
 {
     load = function(...) return world:load(...) end,
     update = function(...) return world:update(...) end,
-    --draw = function(...) return world:draw(...) end,
     order = 1
 }

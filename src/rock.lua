@@ -17,7 +17,6 @@ function rock:new(x, y, id)
     self.dead = false
     
     self.tableID = id
-
 end
 
 function rock:draw()

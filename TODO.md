@@ -1,6 +1,6 @@
 # Core
 - [ ] The cart
-- [ ] Little tutorial(introduction about how to play the game. at the beggining the will be an arrow showing on the rock and on the tree and after chopping them there will appear an arrow above the empty rail tile)
+- [ ] Little tutorial(introduction about how to play the game. at the beginning the will be an arrow showing on the rock and on the tree and after chopping them there will appear an arrow above the empty rail tile)
 - [ ] Own sprites
 - [ ] Music
 - [ ] SFX
@@ -19,3 +19,4 @@
 
 # After the release
 - [ ] Change in the map.tmx file name of the rocks from "stone" to "rocks"
+- [ ] Make the railway trigger to work as first anticipated, not how it is rn
