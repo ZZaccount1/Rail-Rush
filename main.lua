@@ -61,6 +61,13 @@ function love.keypressed(k, sc, r)
         elseif k == "k" then
             ui.woodAmount = 100
             ui.stoneAmount = 100
+        elseif k == "l" then
+            ui.woodAmount = 0
+            ui.stoneAmount = 0
+        elseif k == "j" then
+            for i,v in ipairs(emptyRailways) do
+                v.builded = true
+            end
         end
     end
 end
