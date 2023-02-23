@@ -1,9 +1,10 @@
 player = {}
 
 player.x = 173
-player.y = 1000
+player.y = 800
 player.speed = 0.5 * 500
 player.scale = 3.2
+
 
 local rectangleSize = 32
 player.animations = {}

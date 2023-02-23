@@ -9,7 +9,8 @@ minecart.startY = 0
 
 minecart.orientation = ""
 
-minecart.speed = 18
+minecart.speed = 25
+minecart.speedIncrease = 0.5
 
 function minecart:load()
     minecart.x = minecart.startX
@@ -17,8 +18,8 @@ function minecart:load()
     minecart.w = 16
     minecart.h = 16
 
-    self.collider = worldMap:newRectangleCollider(minecart.x*globalScale, minecart.y*globalScale, 16*globalScale, 16*globalScale)
-    self.collider:setType("static")
+    --minecart.collider = worldMap:newRectangleCollider(minecart.x*globalScale, minecart.y*globalScale, 16*globalScale, 16*globalScale)
+    --minecart.collider:setType("static")
 
     minecart.spriteSheet = love.graphics.newImage("sprites/props.png")
     minecart.quad = love.graphics.newQuad(16,16,minecart.w,minecart.h, minecart.spriteSheet)
@@ -26,6 +27,10 @@ end
 
 function minecart:update(dt)
     if pause then return end
+
+    minecart.speed = minecart.speed + minecart.speedIncrease  * dt
+
+    print(minecart.speed)
 
     for i,o in ipairs(railwayTriggers) do
         local x = minecart.x
@@ -53,7 +58,7 @@ function minecart:update(dt)
         local trigW = o.w / globalScale
         local trigH = o.h / globalScale
 
-        print("builded", o.builded)
+        --print("builded", o.builded)
         if x + w > trigX and x < trigX + trigW and y + h > trigY and y < trigY + trigH and not o.builded then
             pause = true
             ui.drawLose = true

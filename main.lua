@@ -3,7 +3,7 @@ windowH = 0
 
 globalScale = 3.2
 
-release = false
+release = true
 debug = false
 
 pause = false
@@ -27,6 +27,11 @@ function love.load()
     af.load("src")
 
     cam = camera()
+
+    bgMusic = love.audio.newSource("sounds/ost/ost1.mp3", "stream")
+    bgMusic:setVolume(0.05)
+    bgMusic:setLooping(true)
+    bgMusic:play()
 end
 
 function love.draw()
@@ -49,7 +54,7 @@ function love.keypressed(k, sc, r)
         love.event.quit()
     end
 
-    if k == "r" and pause then
+    if k == "y" then
         love.event.quit("restart")
     end
 
