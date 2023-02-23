@@ -45,9 +45,10 @@ function rwTile:onClick(x,y)
         if distance <= interactionRadius then
         
             print("rwTile CLICK!")
-            self.sfx:stop()
-            self.sfx:play()
+            
             if ui.stoneAmount > 0 and ui.woodAmount > 0 then
+                self.sfx:stop()
+                self.sfx:play()
                 self.builded = true
                 ui.stoneAmount = ui.stoneAmount - 1
                 ui.woodAmount = ui.woodAmount - 1
