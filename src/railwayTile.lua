@@ -19,6 +19,7 @@ function rwTile:new(x, y, orientation)
     
     self.builded = false
     self.sfx = love.audio.newSource("sounds/sfx/railway.mp3", "static")
+    self.negativeBeep = love.audio.newSource("sounds/sfx/negativeBeep.mp3", "static")
 end
 
 function rwTile:draw()
@@ -52,6 +53,9 @@ function rwTile:onClick(x,y)
                 self.builded = true
                 ui.stoneAmount = ui.stoneAmount - 1
                 ui.woodAmount = ui.woodAmount - 1
+            else
+                self.negativeBeep:stop()
+                self.negativeBeep:play()
             end 
         end
     end
