@@ -5,7 +5,7 @@ function world:load()
 end
 
 function world:update(dt)
-    if lost then return end
+    if pause then return end
 
     worldMap:update(dt)
 end

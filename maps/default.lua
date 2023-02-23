@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 8,
-  nextobjectid = 171,
+  nextobjectid = 172,
   properties = {},
   tilesets = {
     {
@@ -2206,6 +2206,19 @@ return {
           properties = {
             ["newOrientation"] = "d"
           }
+        },
+        {
+          id = 171,
+          name = "End",
+          class = "minecartEnd",
+          shape = "rectangle",
+          x = 864,
+          y = 64,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },

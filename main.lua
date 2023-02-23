@@ -6,7 +6,7 @@ globalScale = 3.2
 release = false
 debug = false
 
-lost = false
+pause = false
 
 function love.load()
     -- Disable smooth scaling
@@ -40,6 +40,8 @@ function love.draw()
     if debug then
         world:draw()
     end
+
+    ui:draw()
 end
 
 function love.keypressed(k, sc, r)
@@ -47,7 +49,7 @@ function love.keypressed(k, sc, r)
         love.event.quit()
     end
 
-    if k == "r" and lost then
+    if k == "r" and pause then
         love.event.quit("restart")
     end
 
@@ -74,7 +76,7 @@ end
 
 function love.mousepressed(x, y, button, istouch)
     
-    if button == 1 and not lost then
+    if button == 1 and not pause then
        map:onClick(x,y)
     end
  end

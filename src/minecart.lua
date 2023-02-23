@@ -2,6 +2,7 @@ minecart = {}
 
 railwayTriggers = {}
 emptyRailways = {}
+endTrigger = nil
 
 minecart.startX = 0
 minecart.startY = 0
@@ -24,7 +25,7 @@ function minecart:load()
 end
 
 function minecart:update(dt)
-    if lost then return end
+    if pause then return end
 
     for i,o in ipairs(railwayTriggers) do
         local x = minecart.x
@@ -54,9 +55,16 @@ function minecart:update(dt)
 
         print("builded", o.builded)
         if x + w > trigX and x < trigX + trigW and y + h > trigY and y < trigY + trigH and not o.builded then
-            lost = true
+            pause = true
+            ui.drawLose = true
             print("empty layer trig")
         end
+    end
+
+    if minecart.x + minecart.w > endTrigger.x and minecart.x < endTrigger.x + endTrigger.width and minecart.y + minecart.h > endTrigger.y and minecart.y < endTrigger.y + endTrigger.height then
+        minecart.speed = 0
+        pause = true
+        ui.drawWin = true
     end
 
     -- Move

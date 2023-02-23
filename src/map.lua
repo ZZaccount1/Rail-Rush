@@ -22,6 +22,8 @@ function map:load()
             minecart.startX = v.x
             minecart.startY = v.y
             minecart.orientation = v.properties["startOrientation"]
+        elseif v.class == "minecartEnd" then
+            endTrigger = v
         elseif v.class == "railwayTrigger" then
             table.insert(railwayTriggers, v)
         end

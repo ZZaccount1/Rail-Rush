@@ -32,7 +32,7 @@ function player:load()
 end
 
 function player:update(dt)
-    if lost then return end
+    if pause then return end
 
     local vx = 0
     local vy = 0
