@@ -17,10 +17,10 @@ function minecart:load()
     minecart.y = minecart.startY
     minecart.w = 16
     minecart.h = 16
-
+    
     --minecart.collider = worldMap:newRectangleCollider(minecart.x*globalScale, minecart.y*globalScale, 16*globalScale, 16*globalScale)
     --minecart.collider:setType("static")
-
+    
     minecart.spriteSheet = love.graphics.newImage("sprites/props.png")
     minecart.quad = love.graphics.newQuad(16,16,minecart.w,minecart.h, minecart.spriteSheet)
 end
@@ -30,7 +30,7 @@ function minecart:update(dt)
 
     minecart.speed = minecart.speed + minecart.speedIncrease  * dt
 
-    print(minecart.speed)
+    --print(minecart.speed)
 
     for i,o in ipairs(railwayTriggers) do
         local x = minecart.x

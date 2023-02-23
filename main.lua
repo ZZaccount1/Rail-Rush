@@ -3,7 +3,7 @@ windowH = 0
 
 globalScale = 3.2
 
-release = true
+release = false
 debug = false
 
 pause = false
@@ -60,11 +60,12 @@ function love.keypressed(k, sc, r)
 
     if not release then
         if k == "i" then
-            debug = not debug
+            debug = not debugw
         elseif k == "o" then
             minecart.speed = minecart.speed + 5
         elseif k == "p" then
             minecart.speed = 0
+            minecart.speedIncrease = 0
         elseif k == "k" then
             ui.woodAmount = 100
             ui.stoneAmount = 100

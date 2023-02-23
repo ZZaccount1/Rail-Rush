@@ -18,6 +18,7 @@ function rwTile:new(x, y, orientation)
     end
     
     self.builded = false
+    self.sfx = love.audio.newSource("sounds/sfx/railway.mp3", "static")
 end
 
 function rwTile:draw()
@@ -44,6 +45,8 @@ function rwTile:onClick(x,y)
         if distance <= interactionRadius then
         
             print("rwTile CLICK!")
+            self.sfx:stop()
+            self.sfx:play()
             if ui.stoneAmount > 0 and ui.woodAmount > 0 then
                 self.builded = true
                 ui.stoneAmount = ui.stoneAmount - 1

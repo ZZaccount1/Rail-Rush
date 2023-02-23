@@ -20,6 +20,11 @@ function tree:new(x, y)
 
     self.hp = 3
     self.dead = false
+
+    self.sfx = {}
+    self.sfx.chop = {love.audio.newSource("sounds/sfx/treeChopping/chop1.mp3", "static"), 
+                     love.audio.newSource("sounds/sfx/treeChopping/chop2.mp3", "static"),
+                     love.audio.newSource("sounds/sfx/treeChopping/chop3.mp3", "static")}
 end
 
 function tree:draw()
@@ -54,7 +59,10 @@ function tree:onClick(x,y)
         print(distance)
 
         if distance <= interactionRadius then
-            print("TREE CLICK!",self.tableID)
+            local random = math.random(#self.sfx.chop)
+            print("TREE CLICK!",self.tableID, "random:",random)
+            self.sfx.chop[random]:stop()
+            self.sfx.chop[random]:play()
             self.hp = self.hp - 1
         end
     end

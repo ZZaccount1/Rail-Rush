@@ -17,6 +17,11 @@ function rock:new(x, y, id)
     self.dead = false
     
     self.tableID = id
+
+    self.sfx = {}
+    self.sfx.mine = {love.audio.newSource("sounds/sfx/mining/mine1.mp3", "static"), 
+                     love.audio.newSource("sounds/sfx/mining/mine2.mp3", "static"),
+                     love.audio.newSource("sounds/sfx/mining/mine3.mp3", "static")}
 end
 
 function rock:draw()
@@ -41,7 +46,10 @@ function rock:onClick(x,y)
         print(distance)
 
         if distance <= interactionRadius then
-            print("ROCK CLICK!",self.tableID)
+            local random = math.random(#self.sfx.mine)
+            print("ROCK CLICK!",self.tableID, "random:",random)
+            self.sfx.mine[random]:stop()
+            self.sfx.mine[random]:play()
             self.hp = self.hp - 1
         end
     end
