@@ -1,5 +1,4 @@
 # Core
-- [ ] Difficulty picking(just changing the minecart's speed)
 - [ ] Little tutorial(introduction about how to play the game. at the beginning the will be an arrow showing on the rock and on the tree and after chopping them there will appear an arrow above the empty rail tile)
 - [ ] Own sprites
 - [ ] SFX
@@ -10,6 +9,7 @@
 - [ ] Move things like player 11,15(player sprite size) to variables cuz its used in multiple scripts and it gets messy
 
 # DONE
+- [x] Difficulty picking(just changing the minecart's speed)
 - [x]] Music
 - [x] The cart
 - [x] Change the collider size(so player will be able to be closer to the props, instead of colliding with that big 16x16 collider)
