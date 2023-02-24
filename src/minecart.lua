@@ -9,6 +9,15 @@ minecart.startY = 0
 
 minecart.orientation = ""
 
+minecart.easySpeed = 10
+minecart.mediumSpeed = 20
+minecart.hardSpeed = 30
+
+minecart.speedIncreaseEasy = 0.25
+minecart.speedIncreaseMedium = 0.5
+minecart.speedIncreaseHard = 0.75
+
+
 minecart.speed = 25
 minecart.speedIncrease = 0.5
 
@@ -27,6 +36,8 @@ end
 
 function minecart:update(dt)
     if pause then return end
+
+    --print("speed:",minecart.speed, "speedIncrease:",minecart.speedIncrease)
 
     minecart.speed = minecart.speed + minecart.speedIncrease  * dt
 

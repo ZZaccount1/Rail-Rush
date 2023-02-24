@@ -32,10 +32,16 @@ function love.load()
     bgMusic:setVolume(0.05)
     bgMusic:setLooping(true)
     bgMusic:play()
+
+    if ui.pickDifficulty then
+        pause = true
+    end
 end
 
 function love.draw()
+
     af:draw()
+    
     for i,v in ipairs(map.entities) do
         if map.entities[i].drawAbove then
             map.entities[i]:drawAbove()
@@ -44,6 +50,11 @@ function love.draw()
 
     if debug then
         world:draw()
+    end
+
+    if not release then
+        -- Draw fps
+        love.graphics.print("FPS: "..love.timer.getFPS( ), 0, windowH - love.graphics.getFont():getHeight())
     end
 
     ui:draw()
@@ -58,9 +69,19 @@ function love.keypressed(k, sc, r)
         love.event.quit("restart")
     end
 
+    if k == "m" then
+        local volume = love.audio.getVolume()
+        print("volume:",volume)
+        if volume > 0.1 then
+            love.audio.setVolume(0)
+        else
+            love.audio.setVolume(1)
+        end
+    end
+
     if not release then
         if k == "i" then
-            debug = not debugw
+            debug = not debug
         elseif k == "o" then
             minecart.speed = minecart.speed + 5
         elseif k == "p" then
@@ -81,7 +102,6 @@ function love.keypressed(k, sc, r)
 end
 
 function love.mousepressed(x, y, button, istouch)
-    
     if button == 1 and not pause then
        map:onClick(x,y)
     end
