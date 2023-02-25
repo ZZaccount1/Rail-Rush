@@ -97,6 +97,9 @@ function love.keypressed(k, sc, r)
             for i,v in ipairs(emptyRailways) do
                 v.builded = true
             end
+        elseif k == "n" then
+            love.filesystem.remove("tutorial.dat")
+            love.event.quit("restart")
         end
     end
 end
