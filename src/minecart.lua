@@ -9,13 +9,13 @@ minecart.startY = 0
 
 minecart.orientation = ""
 
-minecart.easySpeed = 10
-minecart.mediumSpeed = 20
-minecart.hardSpeed = 30
+minecart.easySpeed = 20
+minecart.mediumSpeed = 30
+minecart.hardSpeed = 40
 
-minecart.speedIncreaseEasy = 0.25
-minecart.speedIncreaseMedium = 0.5
-minecart.speedIncreaseHard = 0.75
+minecart.speedIncreaseEasy = 0.5
+minecart.speedIncreaseMedium = 0.75
+minecart.speedIncreaseHard = 0.95
 
 
 minecart.speed = 25

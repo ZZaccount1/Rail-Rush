@@ -21,8 +21,8 @@ function player:load()
     player.grid = anim8.newGrid(tileSizeX, tileSizeY, player.spriteSheet:getWidth(), player.spriteSheet:getHeight())
 
     player.animations.speed = 0.15
-    player.animations.idleR = anim8.newAnimation(player.grid('1-3', 1), player.animations.speed)
-    player.animations.idleL = anim8.newAnimation(player.grid('1-3', 2), player.animations.speed)
+    player.animations.idleR = anim8.newAnimation(player.grid('1-4', 1), player.animations.speed)
+    player.animations.idleL = anim8.newAnimation(player.grid('1-4', 2), player.animations.speed)
     player.animations.right = anim8.newAnimation(player.grid('1-4', 3), player.animations.speed)
     player.animations.left  = anim8.newAnimation(player.grid('1-4', 4), player.animations.speed)
 
