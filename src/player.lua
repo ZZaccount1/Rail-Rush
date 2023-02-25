@@ -33,7 +33,7 @@ function player:load()
 end
 
 function player:update(dt)
-    if pause then return end
+    if pause or ui.pickDifficulty then return end
 
     local vx = 0
     local vy = 0
