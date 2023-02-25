@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 8,
-  nextobjectid = 172,
+  nextobjectid = 173,
   properties = {},
   tilesets = {
     {
@@ -265,7 +265,7 @@ return {
           class = "tree",
           shape = "rectangle",
           x = 96,
-          y = 192,
+          y = 208,
           width = 16,
           height = 48,
           rotation = 0,
@@ -629,7 +629,7 @@ return {
           class = "stone",
           shape = "rectangle",
           x = 80,
-          y = 176,
+          y = 160,
           width = 16,
           height = 16,
           rotation = 0,
@@ -2162,6 +2162,19 @@ return {
           y = 64,
           width = 16,
           height = 16,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 172,
+          name = "Tree",
+          class = "tree",
+          shape = "rectangle",
+          x = 96,
+          y = 160,
+          width = 16,
+          height = 48,
           rotation = 0,
           visible = true,
           properties = {}

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="60" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="172">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="60" height="40" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="173">
  <editorsettings>
   <export target="default.lua" format="lua"/>
  </editorsettings>
@@ -102,7 +102,7 @@
   <object id="21" name="Tree" class="tree" x="208" y="80" width="16" height="48"/>
   <object id="18" name="Stone" class="stone" x="96" y="128" width="16" height="16"/>
   <object id="22" name="Tree" class="tree" x="704" y="48" width="16" height="48"/>
-  <object id="23" name="Tree" class="tree" x="96" y="192" width="16" height="48"/>
+  <object id="23" name="Tree" class="tree" x="96" y="208" width="16" height="48"/>
   <object id="24" name="Tree" class="tree" x="64" y="80" width="16" height="48"/>
   <object id="25" name="Tree" class="tree" x="304" y="48" width="16" height="48"/>
   <object id="26" name="Tree" class="tree" x="368" y="112" width="16" height="48"/>
@@ -130,7 +130,7 @@
   <object id="50" name="Tree" class="tree" x="848" y="208" width="16" height="48"/>
   <object id="51" name="Tree" class="tree" x="864" y="496" width="16" height="48"/>
   <object id="52" name="Stone" class="stone" x="64" y="240" width="16" height="16"/>
-  <object id="53" name="Stone" class="stone" x="80" y="176" width="16" height="16"/>
+  <object id="53" name="Stone" class="stone" x="80" y="160" width="16" height="16"/>
   <object id="54" name="Stone" class="stone" x="176" y="128" width="16" height="16"/>
   <object id="55" name="Stone" class="stone" x="128" y="80" width="16" height="16"/>
   <object id="56" name="Stone" class="stone" x="352" y="64" width="16" height="16"/>
@@ -491,6 +491,7 @@
    </properties>
   </object>
   <object id="171" name="End" class="minecartEnd" x="864" y="64" width="16" height="16"/>
+  <object id="172" name="Tree" class="tree" x="96" y="160" width="16" height="48"/>
  </objectgroup>
  <objectgroup id="6" name="solid">
   <object id="1" x="0" y="0" width="960" height="48"/>
