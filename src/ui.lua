@@ -5,8 +5,8 @@ ui.stoneAmount = 0
 
 ui.textScale = 20
 
-ui.pickDifficulty = true
-ui.tutorial = false
+ui.tutorial = true
+ui.pickDifficulty = false
 ui.drawWin = false
 ui.drawLose = false
 
@@ -40,6 +40,10 @@ function ui:load()
 end
 
 function ui:draw()
+    if ui.tutorial then
+
+    end
+
     if ui.pickDifficulty then
         ui:difficultyMenuDraw()
         return
@@ -59,9 +63,11 @@ function ui:draw()
     if ui.drawWin then
         ui.drawLose = false
         love.graphics.print("You Win!", windowW/2 - ui.defaultFont:getWidth("You Win!")/2, 0)
+        love.graphics.print("Press Y to restart", windowW/2 - ui.defaultFont:getWidth("Press Y to restart")/2,  windowH/2 - ui.defaultFont:getHeight()/2)
     elseif ui.drawLose then
         ui.drawWin = false
         love.graphics.print("You Lost!", windowW/2 - ui.defaultFont:getWidth("You Lost!")/2, 0)
+        love.graphics.print("Press Y to restart", windowW/2 - ui.defaultFont:getWidth("Press Y to restart")/2,  windowH/2 - ui.defaultFont:getHeight()/2)
     end
 end
 
