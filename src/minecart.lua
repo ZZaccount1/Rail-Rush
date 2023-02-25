@@ -31,7 +31,9 @@ function minecart:load()
     --minecart.collider:setType("static")
     
     minecart.spriteSheet = love.graphics.newImage("sprites/props.png")
-    minecart.quad = love.graphics.newQuad(16,16,minecart.w,minecart.h, minecart.spriteSheet)
+    minecart.quadH = love.graphics.newQuad(16,16,minecart.w,minecart.h, minecart.spriteSheet)
+    minecart.quadV = love.graphics.newQuad(16,16*2,minecart.w,minecart.h, minecart.spriteSheet)
+    minecart.quad = minecart.quadH
 end
 
 function minecart:update(dt)
@@ -86,12 +88,16 @@ function minecart:update(dt)
     -- Move
     if minecart.orientation == "d" then
         minecart.x = minecart.x + minecart.speed * dt
+        minecart.quad = minecart.quadH
     elseif minecart.orientation == "s" then
         minecart.y = minecart.y + minecart.speed * dt
+        minecart.quad = minecart.quadV
     elseif minecart.orientation == "a" then
         minecart.x = minecart.x - minecart.speed * dt
+        minecart.quad = minecart.quadH
     elseif minecart.orientation == "w" then
         minecart.y = minecart.y - minecart.speed * dt
+        minecart.quad = minecart.quadV
     end
 end
 
