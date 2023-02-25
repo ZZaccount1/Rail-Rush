@@ -6,6 +6,7 @@ ui.stoneAmount = 0
 ui.textScale = 20
 
 ui.pickDifficulty = true
+ui.tutorial = false
 ui.drawWin = false
 ui.drawLose = false
 
@@ -57,10 +58,10 @@ function ui:draw()
 
     if ui.drawWin then
         ui.drawLose = false
-        love.graphics.print("You Win!", windowW/2 - ui.defaultFont:getWidth("You Lost!")/2, windowH/2 - ui.defaultFont:getHeight()/2)
+        love.graphics.print("You Win!", windowW/2 - ui.defaultFont:getWidth("You Win!")/2, 0)
     elseif ui.drawLose then
         ui.drawWin = false
-        love.graphics.print("You Lost!", windowW/2 - ui.defaultFont:getWidth("You Lost!")/2, windowH/2 - ui.defaultFont:getHeight()/2)
+        love.graphics.print("You Lost!", windowW/2 - ui.defaultFont:getWidth("You Lost!")/2, 0)
     end
 end
 

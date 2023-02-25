@@ -1,4 +1,5 @@
 # Core
+- [ ] Face the minecart
 - [ ] Little tutorial(introduction about how to play the game. at the beginning the will be an arrow showing on the rock and on the tree and after chopping them there will appear an arrow above the empty rail tile)
 
 # Not Core
