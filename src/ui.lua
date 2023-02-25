@@ -27,9 +27,9 @@ function loadTutorialCompletionStatus()
 end
 
 function ui:load()
-    buttons.easy = {x=0, y=0, w=75, h=40, text="Easy"}
-    buttons.medium = {x=0, y=0, w=100, h=40, text="Medium"}
-    buttons.hard = {x=0, y=0, w=75, h=40, text="Hard"}
+    buttons.easy = {x=0, y=0, w=125, h=40, text="Super Easy"}
+    buttons.medium = {x=0, y=0, w=125, h=40, text="Very Easy"}
+    buttons.hard = {x=0, y=0, w=75, h=40, text="Easy"}
 
     centerX = windowW / 2
     centerY = windowH / 2 
@@ -131,9 +131,9 @@ function ui:difficultyMenuDraw()
     love.graphics.rectangle("line", buttons.hard.x,   buttons.hard.y,   buttons.hard.w,   buttons.hard.h)
 
     -- Draw the text for each button
-    local easyTextSize = ui.defaultFont:getWidth("Easy")/2
-    local mediumTextSize = ui.defaultFont:getWidth("Medium")/2
-    local hardTextSize = ui.defaultFont:getWidth("Hard")/2
+    local easyTextSize = ui.defaultFont:getWidth("Super Easy")/2
+    local mediumTextSize = ui.defaultFont:getWidth("Very Easy")/2
+    local hardTextSize = ui.defaultFont:getWidth("Easy")/2
     love.graphics.print(buttons.easy.text, buttons.easy.x + buttons.easy.w / 2 - easyTextSize, centerY + buttons.easy.h / 2 - love.graphics.getFont():getHeight() / 2)
     love.graphics.print(buttons.medium.text, buttons.medium.x + buttons.medium.w / 2 - mediumTextSize, centerY + buttons.medium.h / 2 - love.graphics.getFont():getHeight() / 2)
     love.graphics.print(buttons.hard.text, buttons.hard.x + buttons.hard.w / 2 - hardTextSize, centerY + buttons.hard.h / 2 - love.graphics.getFont():getHeight() / 2)
