@@ -9,6 +9,15 @@ minecart.startY = 0
 
 minecart.orientation = ""
 
+minecart.easySpeed = 20
+minecart.mediumSpeed = 30
+minecart.hardSpeed = 40
+
+minecart.speedIncreaseEasy = 0.5
+minecart.speedIncreaseMedium = 0.75
+minecart.speedIncreaseHard = 0.95
+
+
 minecart.speed = 25
 minecart.speedIncrease = 0.5
 
@@ -22,11 +31,15 @@ function minecart:load()
     --minecart.collider:setType("static")
     
     minecart.spriteSheet = love.graphics.newImage("sprites/props.png")
-    minecart.quad = love.graphics.newQuad(16,16,minecart.w,minecart.h, minecart.spriteSheet)
+    minecart.quadH = love.graphics.newQuad(16,16,minecart.w,minecart.h, minecart.spriteSheet)
+    minecart.quadV = love.graphics.newQuad(16,16*2,minecart.w,minecart.h, minecart.spriteSheet)
+    minecart.quad = minecart.quadH
 end
 
 function minecart:update(dt)
     if pause then return end
+
+    --print("speed:",minecart.speed, "speedIncrease:",minecart.speedIncrease)
 
     minecart.speed = minecart.speed + minecart.speedIncrease  * dt
 
@@ -75,12 +88,16 @@ function minecart:update(dt)
     -- Move
     if minecart.orientation == "d" then
         minecart.x = minecart.x + minecart.speed * dt
+        minecart.quad = minecart.quadH
     elseif minecart.orientation == "s" then
         minecart.y = minecart.y + minecart.speed * dt
+        minecart.quad = minecart.quadV
     elseif minecart.orientation == "a" then
         minecart.x = minecart.x - minecart.speed * dt
+        minecart.quad = minecart.quadH
     elseif minecart.orientation == "w" then
         minecart.y = minecart.y - minecart.speed * dt
+        minecart.quad = minecart.quadV
     end
 end
 
