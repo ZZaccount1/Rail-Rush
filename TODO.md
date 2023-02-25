@@ -10,7 +10,7 @@
 - [x] SFX
 - [x] Own sprites
 - [x] Difficulty picking(just changing the minecart's speed)
-- [x]] Music
+- [x] Music
 - [x] The cart
 - [x] Change the collider size(so player will be able to be closer to the props, instead of colliding with that big 16x16 collider)
 - [x] Make the player to be behind the top 2 tiles of the tree (just make a new layer in the tiled and name it "above the player", and instead of drawing the full tree in the entity layer, draw only the trunk tile)
