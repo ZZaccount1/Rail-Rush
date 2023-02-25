@@ -13,6 +13,19 @@ ui.drawLose = false
 local iconScale = 2.5
 local buttons = {}
 
+function saveTutorialCompletionStatus(completed)
+    love.filesystem.write("tutorial.dat", tostring(completed))
+end
+  
+-- Load the tutorial completion status from a file
+function loadTutorialCompletionStatus()
+    if love.filesystem.getInfo("tutorial.dat") then
+        local contents = love.filesystem.read("tutorial.dat")
+        return contents == "true"
+    end
+    return false
+end
+
 function ui:load()
     buttons.easy = {x=0, y=0, w=75, h=40, text="Easy"}
     buttons.medium = {x=0, y=0, w=100, h=40, text="Medium"}
@@ -41,6 +54,12 @@ function ui:load()
     ui.tutorialArrow = love.graphics.newImage("sprites/arrow.png")
 
     ui.tutorialStage = 0
+
+    -- Check if already played the tutorial
+    if loadTutorialCompletionStatus() then
+        ui.tutorial = false
+        ui.pickDifficulty= true
+    end
 end
 
 function ui:draw()
@@ -57,6 +76,7 @@ function ui:draw()
         else
             ui.tutorial = false
             ui.pickDifficulty= true
+            saveTutorialCompletionStatus(true)
         end
 
         cam:detach()
