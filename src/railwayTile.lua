@@ -53,6 +53,10 @@ function rwTile:onClick(x,y)
                 self.builded = true
                 ui.stoneAmount = ui.stoneAmount - 1
                 ui.woodAmount = ui.woodAmount - 1
+
+                if self.tutorial then
+                    ui.tutorialStage = ui.tutorialStage + 1
+                end
             else
                 self.negativeBeep:stop()
                 self.negativeBeep:play()

@@ -37,11 +37,36 @@ function ui:load()
     ui.spriteSheet = love.graphics.newImage("sprites/icons.png")
     ui.woodIcon = love.graphics.newQuad(0,0,11,10, ui.spriteSheet)
     ui.stoneIcon = love.graphics.newQuad(11,0,11,11, ui.spriteSheet)
+
+    ui.tutorialArrow = love.graphics.newImage("sprites/arrow.png")
+
+    ui.tutorialStage = 0
 end
 
 function ui:draw()
     if ui.tutorial then
 
+        cam:attach()
+
+        if ui.tutorialStage == 0 then
+            love.graphics.draw(ui.tutorialArrow, ui.tutorialTree.x * globalScale - ui.tutorialArrow:getWidth()*globalScale, ui.tutorialTree.y * globalScale - ui.tutorialArrow:getHeight()*globalScale, nil, globalScale, globalScale)
+        elseif ui.tutorialStage == 1 then
+            love.graphics.draw(ui.tutorialArrow, ui.tutorialRock.x * globalScale - ui.tutorialArrow:getWidth()*globalScale, ui.tutorialRock.y * globalScale - ui.tutorialArrow:getHeight()*globalScale, nil, globalScale, globalScale)
+        elseif ui.tutorialStage == 2 then
+            love.graphics.draw(ui.tutorialArrow, ui.tutorialRW.x * globalScale - ui.tutorialArrow:getWidth()*globalScale, ui.tutorialRW.y * globalScale - ui.tutorialArrow:getHeight()*globalScale, nil, globalScale, globalScale)
+        else
+            ui.tutorial = false
+            ui.pickDifficulty= true
+        end
+
+        cam:detach()
+
+        love.graphics.setColor(75/255, 0, 130/255, 0.5)
+        love.graphics.rectangle("fill", 0, 0, windowW, windowH)
+        love.graphics.setColor(1,1,1,1)
+
+        love.graphics.print("Tutorial", windowW/2 - ui.defaultFont:getWidth("Tutorial")/2, 0)
+        return
     end
 
     if ui.pickDifficulty then
@@ -73,7 +98,7 @@ end
 
 function ui:difficultyMenuDraw()
     -- Draw the bg
-    love.graphics.setColor(0, 0, 0, 1)
+    love.graphics.setColor(75/255, 0, 130/255, 0.5)
     love.graphics.rectangle("fill", 0, 0, windowW, windowH)
     love.graphics.setColor(1,1,1,1)
 

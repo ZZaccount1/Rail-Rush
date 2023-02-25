@@ -270,7 +270,9 @@ return {
           height = 48,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tutorial"] = true
+          }
         },
         {
           id = 24,
@@ -621,7 +623,9 @@ return {
           height = 16,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tutorial"] = true
+          }
         },
         {
           id = 53,
@@ -985,7 +989,9 @@ return {
           height = 16,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["tutorial"] = true
+          }
         },
         {
           id = 85,

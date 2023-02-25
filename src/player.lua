@@ -1,7 +1,7 @@
 player = {}
 
 player.x = 173
-player.y = 800
+player.y = 850
 player.speed = 0.5 * 500
 player.scale = 3.2
 

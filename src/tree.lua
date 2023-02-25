@@ -79,5 +79,9 @@ function tree:onClick(x,y)
         ui.woodAmount = ui.woodAmount + 1
         print("amount plus")
         self.dead = true
+
+        if self.tutorial then
+            ui.tutorialStage = ui.tutorialStage + 1
+        end
     end
 end

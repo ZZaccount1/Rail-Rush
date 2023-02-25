@@ -10,12 +10,30 @@ function map:load()
     for i,v in ipairs(gameMap.layers["entity"].objects) do
 		if v.class == "stone" then
 			local entity = rock(v.x, v.y, i)
+
+            if v.properties["tutorial"] then
+                ui.tutorialRock = v
+                entity.tutorial = true
+            end
+
             table.insert(map.entities, entity)
         elseif v.class == "tree" then
             local entity = tree(v.x, v.y)
+
+            if v.properties["tutorial"] then
+                ui.tutorialTree = v
+                entity.tutorial = true
+            end
+
             table.insert(map.entities, entity)
         elseif v.class == "emptyRailway" then
             local entity = rwTile(v.x, v.y, v.properties["orientation"])
+
+            if v.properties["tutorial"] then
+                ui.tutorialRW = v
+                entity.tutorial = true
+            end
+
             table.insert(map.entities, entity)
             table.insert(emptyRailways, entity)
         elseif v.class == "minecartStart" then
