@@ -1,12 +1,12 @@
 # Core
-- [ ] Little tutorial(introduction about how to play the game. at the beginning the will be an arrow showing on the rock and on the tree and after chopping them there will appear an arrow above the empty rail tile)
+- [ ] Rewrite the whole game code
 
 # Not Core
 - [ ] Pickaxe and animation
 - [ ] Entities interaction animations(eg tree shaking)
-- [ ] Move things like player 11,15(player sprite size) to variables cuz its used in multiple scripts and it gets messy
 
 # DONE
+- [x] Little tutorial(introduction about how to play the game. at the beginning the will be an arrow showing on the rock and on the tree and after chopping them there will appear an arrow above the empty rail tile)
 - [x] Face the minecart
 - [x] SFX
 - [x] Own sprites
