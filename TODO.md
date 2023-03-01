@@ -1,5 +1,5 @@
 # Soon
-- [ ] Rewrite the whole game code
+- [ ] Clear the code
 
 # Maybe Soon
 - [ ] Fullscreen
