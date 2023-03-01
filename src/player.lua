@@ -109,5 +109,5 @@ return
     load = function(...) return player:load(...) end,
     update = function(...) return player:update(...) end,
     draw = function(...) return player:draw(...) end,
-    order = 2
+    include = false
 }

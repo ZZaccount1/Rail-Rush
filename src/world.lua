@@ -1,5 +1,7 @@
 world = {}
 
+print("-----------------yea")
+
 function world:load()
     worldMap = wf.newWorld(0,0)
 end
@@ -33,5 +35,5 @@ return
 {
     load = function(...) return world:load(...) end,
     update = function(...) return world:update(...) end,
-    order = 1
+    include = false
 }

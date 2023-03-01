@@ -24,7 +24,10 @@ function love.load()
     object = require("libs.classic")
     wf = require("libs.windfield")
 
-    af.load("src")
+    af.requireAll("src")
+    world:load()
+    player:load()
+    af.load()
 
     cam = camera()
 
@@ -38,9 +41,16 @@ function love.load()
     end
 end
 
-function love.draw()
+function love.update(dt)
+    world:update(dt)
+    player:update(dt)
+    af:update(dt)
+end
 
+function love.draw()
+    world:draw()
     af:draw()
+    player:draw()
     
     for i,v in ipairs(map.entities) do
         if map.entities[i].drawAbove then
