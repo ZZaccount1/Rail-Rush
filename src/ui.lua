@@ -3,7 +3,7 @@ ui = {}
 ui.woodAmount = 0
 ui.stoneAmount = 0
 
-ui.textScale = 20
+ui.textScale = 20 * scaleRatio
 
 -- Different menus
 ui.tutorial = true
@@ -11,9 +11,9 @@ ui.pickDifficulty = false
 ui.drawWin = false
 ui.drawLose = false
 
-local iconScale = 2.5
+local iconScale = 2.5 * scaleRatio
 local buttons = {}
-local offset = 100
+local offset = 100 * scaleRatio
 
 -- If the tutorial was completed
 function saveTutorialCompletionStatus(completed)
@@ -33,7 +33,7 @@ function ui:calculateButtonsPos()
     -- Get the position of the center of the screen
     centerX = windowW / 2
     centerY = windowH / 2 
-    
+
     -- Calculate the X position for the buttons
     buttons.medium.x = centerX - buttons.medium.w / 2
     buttons.easy.x = centerX - buttons.easy.w - offset
@@ -47,9 +47,9 @@ end
 
 function ui:load()
     -- Create button variables
-    buttons.easy = {x=0, y=0, w=125, h=40, text="Super Easy"}
-    buttons.medium = {x=0, y=0, w=125, h=40, text="Very Easy"}
-    buttons.hard = {x=0, y=0, w=75, h=40, text="Easy"}
+    buttons.easy = {x=0, y=0, w=125*scaleRatio, h=40*scaleRatio, text="Super Easy"}
+    buttons.medium = {x=0, y=0, w=125*scaleRatio, h=40*scaleRatio, text="Very Easy"}
+    buttons.hard = {x=0, y=0, w=75*scaleRatio, h=40*scaleRatio, text="Easy"}
 
     ui:calculateButtonsPos()
 

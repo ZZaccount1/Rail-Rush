@@ -1,7 +1,9 @@
 windowW = 0
 windowH = 0
 
-globalScale = 3.2
+globalScale = 5
+scaleRatio = globalScale / 3.2
+print(scaleRatio)
 
 release = false
 debug = false

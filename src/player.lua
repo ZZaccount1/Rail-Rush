@@ -5,10 +5,9 @@ local tileSizeX = 11
 local tileSizeY = 15
 
 -- Player variables
-player.x = 173
-player.y = 850
+player.x = 173 * scaleRatio
+player.y = 850 * scaleRatio
 player.speed = 0.5 * 500
-player.scale = 3.2
 player.animations = {}
 player.facingRight = true
 player.w = tileSizeX
@@ -125,7 +124,7 @@ end
 function player:draw()
     cam:attach()
     
-    player.anim:draw(player.spriteSheet, player.x, player.y-yOffset, nil, player.scale)
+    player.anim:draw(player.spriteSheet, player.x, player.y-yOffset, nil, globalScale)
     
     cam:detach()
 end

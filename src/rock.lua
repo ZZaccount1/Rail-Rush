@@ -1,7 +1,7 @@
 rock = object.extend(object)
 
 -- Radius in which player can interact with the rock
-local interactionRadius = 90
+local interactionRadius = 90 * scaleRatio
 
 function rock:new(x, y)
     -- Basic variables
@@ -51,7 +51,7 @@ function rock:onClick(x,y)
 
     -- Check if the mouse click was within the boundaries of the tree
     if mouseX >= selfX and mouseX <= selfX + self.w and mouseY >= selfY and mouseY <= selfY + self.h then
-        local distance = math.sqrt((selfX + 16/2 - player.x+(11/2)*player.scale)^2 + (selfY - player.y+(15/2)*player.scale)^2)
+        local distance = math.sqrt((selfX + 16/2 - player.x+(11/2)*globalScale)^2 + (selfY - player.y+(15/2)*globalScale)^2)
 
         if distance <= interactionRadius then
             local random = math.random(#self.sfx.mine)
