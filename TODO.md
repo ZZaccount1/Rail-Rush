@@ -1,7 +1,7 @@
 # Soon
 - [ ] Make the tutorial more intuitive
 - [ ] Rails fixed amount
-- [ ] Broken railway animation
+- [ ] Broken railway sprite
 - [ ] Custom cursor
 - [ ] Settings menu
 - [ ] Scale setting
