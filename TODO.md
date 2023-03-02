@@ -13,6 +13,7 @@
 - [ ] Procedural generation
 - [ ] Make the tutorial more intuitive
 - [ ] Pickaxe and animation
+- [ ] Android/iOS support
 - [ ] Entities interaction animations(eg tree shaking)
 
 # Maybe
