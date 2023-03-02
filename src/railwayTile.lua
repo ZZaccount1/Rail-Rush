@@ -1,23 +1,25 @@
 rwTile = object.extend(object)
 
+-- Radius in which player can interact with the tile
 local interactionRadius = 90
 
 function rwTile:new(x, y, orientation)
+    -- Main variables
     self.x = x
     self.y = y
     self.w = 16 * globalScale
     self.h = 16 * globalScale
     self.spriteSheet = love.graphics.newImage("sprites/props.png")
+    self.builded = false
     
     self.orientation = orientation
-
-    if self.orientation == "h" then
+    if self.orientation == "h" then -- If horizontal, get the horizontal tile
         self.quad = love.graphics.newQuad(16*3, 0, 16, 16, self.spriteSheet)
-    else
+    else -- If vertical, get the vertical tile
         self.quad = love.graphics.newQuad(16*2, 16*1, 16, 16, self.spriteSheet)
     end
     
-    self.builded = false
+    -- Get the sfx
     self.sfx = love.audio.newSource("sounds/sfx/railway.mp3", "static")
     self.negativeBeep = love.audio.newSource("sounds/sfx/negativeBeep.mp3", "static")
 end
@@ -29,9 +31,8 @@ function rwTile:draw()
 end
 
 function rwTile:onClick(x,y)
-    if self.builded then
-        return
-    end
+    if self.builded then return end
+
     -- Convert the mouse coordinates to world coordinates
     local mouseX, mouseY = cam:worldCoords(x, y)
 
@@ -41,12 +42,10 @@ function rwTile:onClick(x,y)
     -- Check if the mouse click was within the boundaries of the tree
     if mouseX >= selfX and mouseX <= selfX + self.w and mouseY >= selfY and mouseY <= selfY + self.h then
         local distance = math.sqrt((selfX + 16/2 - player.x+(11/2)*player.scale)^2 + (selfY - player.y+(15/2)*player.scale)^2)
-        print(distance)
 
-        if distance <= interactionRadius then
-        
-            print("rwTile CLICK!")
-            
+        -- If the player is close enough
+        if distance <= interactionRadius then            
+            -- And player has materials
             if ui.stoneAmount > 0 and ui.woodAmount > 0 then
                 self.sfx:stop()
                 self.sfx:play()
@@ -55,9 +54,9 @@ function rwTile:onClick(x,y)
                 ui.woodAmount = ui.woodAmount - 1
 
                 if self.tutorial then
-                    ui.tutorialStage = ui.tutorialStage + 1
+                    ui.tutorialStep = ui.tutorialStep + 1
                 end
-            else
+            else -- If player doesnt have enough materials
                 self.negativeBeep:stop()
                 self.negativeBeep:play()
             end 

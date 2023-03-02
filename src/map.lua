@@ -1,15 +1,15 @@
 map = {}
 
-map.scale = 3.2
-
 map.entities = {}
 
 function map:load()
+    -- Load the map
     gameMap = sti("maps/default.lua")
 
+    -- Go through every single item from the "entity" layer
     for i,v in ipairs(gameMap.layers["entity"].objects) do
-		if v.class == "stone" then
-			local entity = rock(v.x, v.y, i)
+        if v.class == "stone" then
+			local entity = rock(v.x, v.y)
 
             if v.properties["tutorial"] then
                 ui.tutorialRock = v
@@ -52,7 +52,7 @@ end
 
 function map:draw()
     cam:attach()
-    love.graphics.scale(map.scale)
+    love.graphics.scale(globalScale)
         
     gameMap:drawLayer(gameMap.layers["ground"])
     gameMap:drawLayer(gameMap.layers["railway"])
@@ -62,8 +62,8 @@ function map:draw()
     end
     
     love.graphics.scale(1)
+
     cam:detach()
-    
     minecart:draw()
 end
 

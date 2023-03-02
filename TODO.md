@@ -1,10 +1,10 @@
 # Soon
-- [ ] Clear the code
-
-# Maybe Soon
 - [ ] Fullscreen
+- [ ] Readme.md (dont forget about the assets)
 - [ ] Change in the map.tmx file name of the rocks from "stone" to "rocks"
 - [ ] Make the railway trigger to work as first anticipated, not how it is rn
+
+# Maybe Soon
 - [ ] Custom cursor
 - [ ] Skip tutorial
 - [ ] Splash screen
@@ -15,11 +15,11 @@
 - [ ] Pickaxe and animation
 - [ ] Entities interaction animations(eg tree shaking)
 
-# Matbe
+# Maybe
 - [ ] Sprint/fatigue
 
-
 # DONE
+- [x] Clear the code
 - [x] Little tutorial(introduction about how to play the game. at the beginning the will be an arrow showing on the rock and on the tree and after chopping them there will appear an arrow above the empty rail tile)
 - [x] Face the minecart
 - [x] SFX

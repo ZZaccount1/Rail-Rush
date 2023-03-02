@@ -1,13 +1,11 @@
 world = {}
 
-print("-----------------yea")
-
 function world:load()
     worldMap = wf.newWorld(0,0)
 end
 
 function world:update(dt)
-    if pause then return end
+    if pause or ui.pickDifficulty then return end
 
     worldMap:update(dt)
 end

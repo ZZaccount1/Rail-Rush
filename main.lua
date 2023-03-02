@@ -24,49 +24,50 @@ function love.load()
     object = require("libs.classic")
     wf = require("libs.windfield")
 
+    -- Require and load every single script
     af.requireAll("src")
     world:load()
     player:load()
     af.load()
 
+    -- Create the camera
     cam = camera()
 
+    -- Setup and run the background music
     bgMusic = love.audio.newSource("sounds/ost/ost1.mp3", "stream")
     bgMusic:setVolume(0.05)
     bgMusic:setLooping(true)
     bgMusic:play()
-
-    if ui.pickDifficulty then
-        pause = true
-    end
 end
 
 function love.update(dt)
+    -- Update from the scripts
     world:update(dt)
     player:update(dt)
     af:update(dt)
 end
 
 function love.draw()
+    -- Draw from the scripts
     world:draw()
     af:draw()
     player:draw()
-    
+
     for i,v in ipairs(map.entities) do
         if map.entities[i].drawAbove then
             map.entities[i]:drawAbove()
         end
     end
 
+    -- Debug
     if debug then
         world:draw()
-    end
-
-    if not release then
+    
         -- Draw fps
         love.graphics.print("FPS: "..love.timer.getFPS( ), 0, windowH - love.graphics.getFont():getHeight())
     end
 
+    -- Draw the ui
     ui:draw()
 end
 
@@ -81,7 +82,6 @@ function love.keypressed(k, sc, r)
 
     if k == "m" then
         local volume = love.audio.getVolume()
-        print("volume:",volume)
         if volume > 0.1 then
             love.audio.setVolume(0)
         else
