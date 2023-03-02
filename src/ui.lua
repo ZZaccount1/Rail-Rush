@@ -13,6 +13,7 @@ ui.drawLose = false
 
 local iconScale = 2.5
 local buttons = {}
+local offset = 100
 
 -- If the tutorial was completed
 function saveTutorialCompletionStatus(completed)
@@ -28,27 +29,29 @@ function loadTutorialCompletionStatus()
     return false
 end
 
+function ui:calculateButtonsPos()
+    -- Get the position of the center of the screen
+    centerX = windowW / 2
+    centerY = windowH / 2 
+    
+    -- Calculate the X position for the buttons
+    buttons.medium.x = centerX - buttons.medium.w / 2
+    buttons.easy.x = centerX - buttons.easy.w - offset
+    buttons.hard.x = centerX + offset
+
+    -- Calculate the Y position for the buttons
+    buttons.medium.y = centerY
+    buttons.easy.y = centerY
+    buttons.hard.y = centerY
+end
+
 function ui:load()
     -- Create button variables
     buttons.easy = {x=0, y=0, w=125, h=40, text="Super Easy"}
     buttons.medium = {x=0, y=0, w=125, h=40, text="Very Easy"}
     buttons.hard = {x=0, y=0, w=75, h=40, text="Easy"}
 
-    -- Get the position of the center of the screen
-    centerX = windowW / 2
-    centerY = windowH / 2 
-
-    local offset = 100
-
-    -- Calculate the X position for the buttons
-    buttons.medium.x = centerX - buttons.medium.w / 2
-    buttons.easy.x = centerX - buttons.easy.w - offset
-    buttons.hard.x = centerX + offset 
-
-    -- Calculate the Y position for the buttons
-    buttons.medium.y = centerY
-    buttons.easy.y = centerY
-    buttons.hard.y = centerY
+    ui:calculateButtonsPos()
 
     -- Create and setup the default font 
     ui.defaultFont = love.graphics.newFont(ui.textScale)

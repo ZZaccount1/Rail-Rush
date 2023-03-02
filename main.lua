@@ -118,4 +118,11 @@ function love.mousepressed(x, y, button, istouch)
     if button == 1 and not pause then
        map:onClick(x,y)
     end
- end
+end
+
+function love.resize(w, h)
+    windowW = w
+    windowH = h
+
+    ui:calculateButtonsPos()
+end
