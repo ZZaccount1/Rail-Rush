@@ -1,11 +1,11 @@
 # Soon
-- [ ] Fullscreen
-- [ ] Readme.md (dont forget about the assets)
 - [ ] Change in the map.tmx file name of the rocks from "stone" to "rocks"
+- [ ] Readme.md (dont forget about the assets)
 - [ ] Make the railway trigger to work as first anticipated, not how it is rn
 
 # Maybe Soon
 - [ ] Settings menu
+- [ ] Scale setting
 - [ ] Custom cursor
 - [ ] Skip tutorial
 - [ ] Splash screen
