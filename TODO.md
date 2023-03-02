@@ -6,6 +6,7 @@
 - [ ] Change in the map.tmx file name of the rocks from "stone" to "rocks"
 - [ ] Make the railway trigger to work as first anticipated, not how it is rn
 - [ ] Custom cursor
+- [ ] Skip tutorial
 - [ ] Splash screen
 
 # Not Soon
