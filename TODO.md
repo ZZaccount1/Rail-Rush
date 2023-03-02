@@ -1,19 +1,20 @@
 # Soon
-- [ ] Make the railway trigger to work as first anticipated, not how it is rn
-
-# Maybe Soon
+- [ ] Skip tutorial
+- [ ] Make the tutorial more intuitive
+- [ ] Rails fixed amount
+- [ ] Broken railway animation
+- [ ] Custom cursor
 - [ ] Settings menu
 - [ ] Scale setting
-- [ ] Custom cursor
-- [ ] Skip tutorial
+
+# Maybe Soon
+- [ ] Mobiles support
 - [ ] Splash screen
 
 # Not Soon
-- [ ] Procedural generation
-- [ ] Make the tutorial more intuitive
-- [ ] Pickaxe and animation
-- [ ] Mobiles support
 - [ ] Entities interaction animations(eg tree shaking)
+- [ ] Procedural generation
+- [ ] Pickaxe and animation
 
 # Maybe
 - [ ] Sprint/fatigue

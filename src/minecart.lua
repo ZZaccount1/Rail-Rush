@@ -48,7 +48,10 @@ function minecart:update(dt)
         local trigW = o.width
         local trigH = o.height
 
-        if x + w > trigX and x < trigX + trigW and y + h > trigY and y < trigY + trigH then
+        if x + w > trigX and
+           x < trigX + trigW and 
+           y + h > trigY and 
+           y < trigY + trigH then
             minecart.orientation = o.properties["newOrientation"]
         end
     end
@@ -68,7 +71,10 @@ function minecart:update(dt)
         end
     end
 
-    if minecart.x + minecart.w > endTrigger.x and minecart.x < endTrigger.x + endTrigger.width and minecart.y + minecart.h > endTrigger.y and minecart.y < endTrigger.y + endTrigger.height then
+    if minecart.x + minecart.w > endTrigger.x and
+       minecart.x < endTrigger.x + endTrigger.width and
+       minecart.y + minecart.h > endTrigger.y and
+       minecart.y < endTrigger.y + endTrigger.height then
         minecart.speed = 0
         pause = true
         ui.drawWin = true
