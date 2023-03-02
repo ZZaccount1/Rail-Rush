@@ -1,5 +1,4 @@
 # Soon
-- [ ] Skip tutorial
 - [ ] Make the tutorial more intuitive
 - [ ] Rails fixed amount
 - [ ] Broken railway animation
@@ -20,6 +19,7 @@
 - [ ] Sprint/fatigue
 
 # DONE
+- [x] Skip tutorial
 - [x] Readme.md (dont forget about the assets)
 - [x] Clear the code
 - [x] Little tutorial(introduction about how to play the game. at the beginning the will be an arrow showing on the rock and on the tree and after chopping them there will appear an arrow above the empty rail tile)

@@ -29,6 +29,12 @@ function loadTutorialCompletionStatus()
     return false
 end
 
+function ui:endTutorial()
+    ui.tutorial = false
+    ui.pickDifficulty= true
+    saveTutorialCompletionStatus(true)
+end
+
 function ui:calculateButtonsPos()
     -- Get the position of the center of the screen
     centerX = windowW / 2
@@ -85,9 +91,7 @@ function ui:draw()
         elseif ui.tutorialStep == 2 then
             love.graphics.draw(ui.tutorialArrow, ui.tutorialRW.x * globalScale - ui.tutorialArrow:getWidth()*globalScale, ui.tutorialRW.y * globalScale - ui.tutorialArrow:getHeight()*globalScale, nil, globalScale, globalScale)
         else
-            ui.tutorial = false
-            ui.pickDifficulty= true
-            saveTutorialCompletionStatus(true)
+            ui:endTutorial()
         end
         cam:detach()
 
@@ -98,6 +102,9 @@ function ui:draw()
 
         -- Top text
         love.graphics.print("Tutorial", windowW/2 - ui.defaultFont:getWidth("Tutorial")/2, 0)
+        
+        local skipTutorText = "Press H to skip the tutorial"
+        love.graphics.print(skipTutorText, windowW - ui.defaultFont:getWidth(skipTutorText), windowH - ui.defaultFont:getHeight(skipTutorText))
         return
     end
 
@@ -157,36 +164,46 @@ function ui:difficultyMenuDraw()
 end
 
 function ui:mousepressed(x, y, button, istouch)
-    if button == 1 and ui.pickDifficulty then
-        -- Check if the mouse is within the Easy button
-        if x >= buttons.easy.x and x <= buttons.easy.x + buttons.easy.w and
-           y >= buttons.easy.y and y <= buttons.easy.y + buttons.easy.h then
-            ui.pickDifficulty = false
-            pause = false
+    if button == 1 then
+        if ui.pickDifficulty then
+            -- Check if the mouse is within the Easy button
+            if x >= buttons.easy.x and x <= buttons.easy.x + buttons.easy.w and
+            y >= buttons.easy.y and y <= buttons.easy.y + buttons.easy.h then
+                ui.pickDifficulty = false
+                pause = false
 
-            minecart.speed = minecart.easySpeed
-            minecart.speedIncrease = minecart.speedIncreaseEasy
+                minecart.speed = minecart.easySpeed
+                minecart.speedIncrease = minecart.speedIncreaseEasy
+            end
+
+            -- Check if the mouse is within the Medium button
+            if x >= buttons.medium.x and x <= buttons.medium.x + buttons.medium.w and
+            y >= buttons.medium.y and y <= buttons.medium.y + buttons.medium.h then
+                ui.pickDifficulty = false
+                pause = false
+
+                minecart.speed = minecart.mediumSpeed
+                minecart.speedIncrease = minecart.speedIncreaseMedium
+            end
+
+            -- Check if the mouse is within the Hard button
+            if x >= buttons.hard.x and x <= buttons.hard.x + buttons.hard.w and
+            y >= buttons.hard.y and y <= buttons.hard.y + buttons.hard.h then
+                ui.pickDifficulty = false
+                pause = false
+
+                minecart.speed = minecart.hardSpeed
+                minecart.speedIncrease = minecart.speedIncreaseHard
+            end
         end
+    end
+end
 
-        -- Check if the mouse is within the Medium button
-        if x >= buttons.medium.x and x <= buttons.medium.x + buttons.medium.w and
-           y >= buttons.medium.y and y <= buttons.medium.y + buttons.medium.h then
-            ui.pickDifficulty = false
-            pause = false
-
-            minecart.speed = minecart.mediumSpeed
-            minecart.speedIncrease = minecart.speedIncreaseMedium
-        end
-
-        -- Check if the mouse is within the Hard button
-        if x >= buttons.hard.x and x <= buttons.hard.x + buttons.hard.w and
-           y >= buttons.hard.y and y <= buttons.hard.y + buttons.hard.h then
-            ui.pickDifficulty = false
-            pause = false
-
-            minecart.speed = minecart.hardSpeed
-            minecart.speedIncrease = minecart.speedIncreaseHard
-        end
+function ui:keypressed(k)
+    if ui.tutorial then
+        if k == "h" then
+            ui:endTutorial()
+        end    
     end
 end
 
@@ -194,4 +211,5 @@ return
 {
     load = function(...) return ui:load(...) end,
     mousepressed = function(...) return ui:mousepressed(...) end,
+    keypressed = function(...) return ui:keypressed(...) end,
 }
