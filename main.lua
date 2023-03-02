@@ -1,7 +1,7 @@
 windowW = 0
 windowH = 0
 
-globalScale = 5
+globalScale = 3.2
 scaleRatio = globalScale / 3.2
 print(scaleRatio)
 
