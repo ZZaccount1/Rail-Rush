@@ -15,10 +15,9 @@
 - [ ] Pickaxe and animation
 - [ ] Entities interaction animations(eg tree shaking)
 
-# Additional stuff(if i will have enough time)
+# Matbe
 - [ ] Sprint/fatigue
 
-# After the release
 
 # DONE
 - [x] Little tutorial(introduction about how to play the game. at the beginning the will be an arrow showing on the rock and on the tree and after chopping them there will appear an arrow above the empty rail tile)
