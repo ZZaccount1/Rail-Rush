@@ -5,6 +5,7 @@
 - [ ] Make the railway trigger to work as first anticipated, not how it is rn
 
 # Maybe Soon
+- [ ] Settings menu
 - [ ] Custom cursor
 - [ ] Skip tutorial
 - [ ] Splash screen
