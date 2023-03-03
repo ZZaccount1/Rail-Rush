@@ -1,4 +1,5 @@
-# Soon
+# Soon 
+- [ ] Tree collider bigger on the super easy
 - [ ] Make the tutorial more intuitive
 - [ ] Rails fixed amount text
 - [ ] Broken railway sprite
