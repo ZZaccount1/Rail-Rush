@@ -1,6 +1,6 @@
 # Soon
 - [ ] Make the tutorial more intuitive
-- [ ] Rails fixed amount
+- [ ] Rails fixed amount text
 - [ ] Broken railway sprite
 - [ ] Custom cursor
 - [ ] Settings menu
