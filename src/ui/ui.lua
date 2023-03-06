@@ -11,6 +11,8 @@ ui.pickDifficulty = false
 ui.drawWin = false
 ui.drawLose = false
 
+difficulty = ""
+
 local iconScale = 2.5 * scaleRatio
 local buttons = {}
 local offset = 100 * scaleRatio
@@ -172,6 +174,10 @@ function ui:mousepressed(x, y, button, istouch)
                 ui.pickDifficulty = false
                 pause = false
 
+                difficulty = "easy"
+
+                loadAll()
+
                 minecart.speed = minecart.easySpeed
                 minecart.speedIncrease = minecart.speedIncreaseEasy
             end
@@ -182,6 +188,10 @@ function ui:mousepressed(x, y, button, istouch)
                 ui.pickDifficulty = false
                 pause = false
 
+                difficulty = "medium"
+
+                loadAll()
+
                 minecart.speed = minecart.mediumSpeed
                 minecart.speedIncrease = minecart.speedIncreaseMedium
             end
@@ -191,6 +201,10 @@ function ui:mousepressed(x, y, button, istouch)
             y >= buttons.hard.y and y <= buttons.hard.y + buttons.hard.h then
                 ui.pickDifficulty = false
                 pause = false
+
+                difficulty = "hard"
+
+                loadAll()
 
                 minecart.speed = minecart.hardSpeed
                 minecart.speedIncrease = minecart.speedIncreaseHard
