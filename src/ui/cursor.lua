@@ -30,8 +30,6 @@ function cursor:draw()
         end
     end
 
-    
-
     love.graphics.draw(cursor.spriteSheet, cursorSprite, x, y, nil, scale, scale)
 end
 
