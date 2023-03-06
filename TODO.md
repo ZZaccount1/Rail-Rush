@@ -1,5 +1,6 @@
 # Soon 
 - [ ] Tree collider bigger on the super easy
+- [ ] Different interaction radius on different difficulties
 - [ ] Make the tutorial more intuitive
 - [ ] Rails fixed amount text
 - [ ] Broken railway sprite
