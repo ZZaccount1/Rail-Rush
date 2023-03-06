@@ -10,9 +10,6 @@ function cursor:load()
     love.mouse.setVisible(false)
 end
 
-function cursor:update()
-end
-
 function cursor:draw()
     local x, y = love.mouse.getPosition()
     

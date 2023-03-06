@@ -48,7 +48,6 @@ function love.update(dt)
     world:update(dt)
     player:update(dt)
     af:update(dt)
-    cursor:update()
 end
 
 function love.draw()
