@@ -4,7 +4,6 @@
 - [ ] Entities highlight
 - [ ] Make the tutorial more intuitive
 - [ ] Rails fixed amount text
-- [ ] Broken railway sprite
 - [ ] Settings menu
 - [ ] Scale setting
 
@@ -24,6 +23,7 @@
 - [ ] Can earn materials before the minecart starts, in tutorial
 
 # DONE
+- [x] Broken railway sprite
 - [x] Custom cursor
 - [x] Skip tutorial
 - [x] Readme.md (dont forget about the assets)
