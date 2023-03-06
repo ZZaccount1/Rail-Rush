@@ -3,7 +3,6 @@
 - [ ] Tree collider bigger on the super easy
 - [ ] Entities highlight
 - [ ] Make the tutorial more intuitive
-- [ ] Rails fixed amount text
 - [ ] Settings menu
 - [ ] Scale setting
 
@@ -14,6 +13,7 @@
 # Not Soon
 - [ ] Entities interaction animations(eg tree shaking)
 - [ ] Procedural generation
+- [ ] Rails fixed amount text (after the procedural generation)
 - [ ] Pickaxe and animation
 
 # Maybe
