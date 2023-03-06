@@ -182,6 +182,8 @@ function ui:mousepressed(x, y, button, istouch)
 
                 difficulty = "easy"
 
+                interactionRadius = 110 * scaleRatio
+
                 minecart.speed = minecart.easySpeed
                 minecart.speedIncrease = minecart.speedIncreaseEasy
             end
@@ -194,6 +196,8 @@ function ui:mousepressed(x, y, button, istouch)
 
                 difficulty = "medium"
 
+                interactionRadius = 90 * scaleRatio
+                
                 minecart.speed = minecart.mediumSpeed
                 minecart.speedIncrease = minecart.speedIncreaseMedium
             end
@@ -205,6 +209,8 @@ function ui:mousepressed(x, y, button, istouch)
                 pause = false
 
                 difficulty = "hard"
+
+                interactionRadius = 75 * scaleRatio
 
                 minecart.speed = minecart.hardSpeed
                 minecart.speedIncrease = minecart.speedIncreaseHard

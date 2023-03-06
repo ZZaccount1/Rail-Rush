@@ -1,8 +1,5 @@
 tree = object.extend(object)
 
--- Radius in which player can interact with the tree
-local interactionRadius = 90 * scaleRatio
-
 function tree:new(x, y)
     -- Variables
     self.x = x

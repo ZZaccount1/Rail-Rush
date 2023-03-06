@@ -2,6 +2,9 @@ map = {}
 
 map.entities = {}
 
+-- Radius in which player can interact with the rock
+interactionRadius = 90 * scaleRatio
+
 function map:load()
     -- Load the map
     gameMap = sti("maps/default.lua")

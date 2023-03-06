@@ -1,8 +1,5 @@
 rwTile = object.extend(object)
 
--- Radius in which player can interact with the tile
-local interactionRadius = 90 * scaleRatio
-
 function rwTile:new(x, y, orientation, id)
     -- Main variables
     self.x = x

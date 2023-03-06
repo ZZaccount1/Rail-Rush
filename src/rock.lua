@@ -1,8 +1,5 @@
 rock = object.extend(object)
 
--- Radius in which player can interact with the rock
-local interactionRadius = 90 * scaleRatio
-
 function rock:new(x, y)
     -- Basic variables
     self.x = x
