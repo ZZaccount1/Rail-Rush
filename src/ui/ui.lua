@@ -88,6 +88,12 @@ function ui:load()
 end
 
 function ui:draw()
+    -- Draw the amount of items
+    love.graphics.draw(ui.spriteSheet, ui.woodIcon, 10, 10, nil, iconScale, iconScale)
+    love.graphics.draw(ui.spriteSheet, ui.stoneIcon, 10, 10*2+ui.textScale, nil, iconScale, iconScale)
+    love.graphics.print("wood: "..ui.woodAmount, 10+12*iconScale, 10)
+    love.graphics.print("stone: "..ui.stoneAmount, 10+12*iconScale, 10*2 + ui.textScale)
+
     -- Draw the tutorial
     if ui.tutorial then
         -- Draw the arrow
@@ -121,12 +127,6 @@ function ui:draw()
         ui:difficultyMenuDraw()
         return
     end
-
-    -- Draw the amount of items
-    love.graphics.draw(ui.spriteSheet, ui.woodIcon, 10, 10, nil, iconScale, iconScale)
-    love.graphics.draw(ui.spriteSheet, ui.stoneIcon, 10, 10*2+ui.textScale, nil, iconScale, iconScale)
-    love.graphics.print("wood: "..ui.woodAmount, 10+12*iconScale, 10)
-    love.graphics.print("stone: "..ui.stoneAmount, 10+12*iconScale, 10*2 + ui.textScale)
 
     -- Draw the panel when paused
     if pause then
