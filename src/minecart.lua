@@ -100,7 +100,7 @@ function minecart:draw()
     cam:attach()
     love.graphics.scale(globalScale)
 
-    love.graphics.draw(minecart.spriteSheet, minecart.quad, minecart.x, minecart.y)
+    love.graphics.draw(minecart.spriteSheet, minecart.quad, minecart.x, minecart.y - 3.75)
 
     love.graphics.scale(1)
     cam:detach()
