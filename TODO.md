@@ -1,5 +1,4 @@
 # Soon 
-- [ ] Different interaction radius on different difficulties
 - [ ] Tree collider bigger on the super easy
 - [ ] Entities highlight
 - [ ] Make the tutorial more intuitive
@@ -23,6 +22,7 @@
 - [ ] Can earn materials before the minecart starts, in tutorial
 
 # DONE
+- [x] Different interaction radius on different difficulties
 - [x] Broken railway sprite
 - [x] Custom cursor
 - [x] Skip tutorial
