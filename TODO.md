@@ -1,6 +1,6 @@
 # Soon 
-- [ ] Tree collider bigger on the super easy
 - [ ] Different interaction radius on different difficulties
+- [ ] Tree collider bigger on the super easy
 - [ ] Entities highlight
 - [ ] Make the tutorial more intuitive
 - [ ] Rails fixed amount text
