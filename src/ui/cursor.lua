@@ -23,7 +23,6 @@ function cursor:draw()
     
         -- Check if the mouse click was within the boundaries of the tree
         if mouseX >= selfX and mouseX <= selfX + v.w and mouseY >= selfY and mouseY <= selfY + v.h then
-
             cursorSprite = cursor.highlighted
             break
         else 
