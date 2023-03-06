@@ -20,6 +20,9 @@
 # Maybe
 - [ ] Sprint/fatigue
 
+# Bugs
+- [ ] Can earn materials before the minecart starts, in tutorial
+
 # DONE
 - [x] Custom cursor
 - [x] Skip tutorial
