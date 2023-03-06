@@ -4,7 +4,6 @@
 - [ ] Make the tutorial more intuitive
 - [ ] Rails fixed amount text
 - [ ] Broken railway sprite
-- [ ] Custom cursor
 - [ ] Settings menu
 - [ ] Scale setting
 
@@ -21,6 +20,7 @@
 - [ ] Sprint/fatigue
 
 # DONE
+- [x] Custom cursor
 - [x] Skip tutorial
 - [x] Readme.md (dont forget about the assets)
 - [x] Clear the code

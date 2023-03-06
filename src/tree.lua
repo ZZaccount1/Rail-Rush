@@ -6,7 +6,7 @@ local interactionRadius = 90 * scaleRatio
 function tree:new(x, y)
     -- Variables
     self.x = x
-    self.y = y
+    self.y = y + 16
     self.w = 16 * globalScale
     self.h = 16 * globalScale
     self.spriteSheet = love.graphics.newImage("sprites/props.png")
@@ -15,9 +15,9 @@ function tree:new(x, y)
     self.quad.top = love.graphics.newQuad(16*0, 16*1, 16*1, 16*2, self.spriteSheet)
 
     -- Create and setup the collider
-    self.collider = worldMap:newPolygonCollider({self.x*globalScale, (self.y+16*1)*globalScale,
-                                                 self.x*globalScale + 16*globalScale, (self.y+16*1)*globalScale,
-                                                 self.x*globalScale + (16*globalScale)/2, (self.y+16*1)*globalScale + 16*globalScale})
+    self.collider = worldMap:newPolygonCollider({self.x*globalScale, (self.y*1)*globalScale,
+                                                 self.x*globalScale + 16*globalScale, (self.y*1)*globalScale,
+                                                 self.x*globalScale + (16*globalScale)/2, (self.y*1)*globalScale + 16*globalScale})
     self.collider:setType("static")
 
     -- HP system
@@ -34,7 +34,7 @@ end
 -- Default draw
 function tree:draw()
     if not self.dead then
-        love.graphics.draw(self.spriteSheet, self.quad.trunk, self.x, self.y+16)
+        love.graphics.draw(self.spriteSheet, self.quad.trunk, self.x, self.y)
     end
 end
 
@@ -43,7 +43,7 @@ function tree:drawAbove()
     cam:attach()
     love.graphics.scale(globalScale)
     if not self.dead then
-        love.graphics.draw(self.spriteSheet, self.quad.top, self.x, self.y-16)
+        love.graphics.draw(self.spriteSheet, self.quad.top, self.x, self.y-32)
     end
     love.graphics.scale(1)
     cam:detach()
@@ -57,7 +57,7 @@ function tree:onClick(x,y)
     local mouseX, mouseY = cam:worldCoords(x, y)
 
     local selfX = self.x * globalScale
-    local selfY = (self.y+16) * globalScale
+    local selfY = (self.y) * globalScale
 
     -- Check if the mouse click was within the boundaries of the tree
     if mouseX >= selfX and mouseX <= selfX + self.w and mouseY >= selfY and mouseY <= selfY + self.h then

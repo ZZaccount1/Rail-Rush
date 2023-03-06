@@ -30,6 +30,7 @@ function love.load()
     af.requireAll("src")
     world:load()
     player:load()
+    cursor:load()
     af.load()
 
     -- Create the camera
@@ -47,6 +48,7 @@ function love.update(dt)
     world:update(dt)
     player:update(dt)
     af:update(dt)
+    cursor:update()
 end
 
 function love.draw()
@@ -71,6 +73,7 @@ function love.draw()
 
     -- Draw the ui
     ui:draw()
+    cursor:draw()
 end
 
 function love.keypressed(k, sc, r)
