@@ -15,10 +15,13 @@ function rwTile:new(x, y, orientation)
     self.orientation = orientation
     if self.orientation == "h" then -- If horizontal, get the horizontal tile
         self.quad = love.graphics.newQuad(16*3, 0, 16, 16, self.spriteSheet)
+        self.dead = love.graphics.newQuad(16*2, 16*3, 16, 16, self.spriteSheet)
     else -- If vertical, get the vertical tile
         self.quad = love.graphics.newQuad(16*2, 16*1, 16, 16, self.spriteSheet)
+        self.dead = love.graphics.newQuad(16*1, 16*3, 16, 16, self.spriteSheet)
     end
     
+
     -- Get the sfx
     self.sfx = love.audio.newSource("sounds/sfx/railway.mp3", "static")
     self.negativeBeep = love.audio.newSource("sounds/sfx/negativeBeep.mp3", "static")
@@ -27,6 +30,8 @@ end
 function rwTile:draw()
     if self.builded then
         love.graphics.draw(self.spriteSheet, self.quad, self.x, self.y)
+    else
+        love.graphics.draw(self.spriteSheet, self.dead, self.x, self.y)
     end
 end
 
