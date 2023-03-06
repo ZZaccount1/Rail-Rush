@@ -17,6 +17,12 @@ local iconScale = 2.5 * scaleRatio
 local buttons = {}
 local offset = 100 * scaleRatio
 
+-- Tutorial variables
+ui.tutorial = {}
+ui.tutorial.treeStepID = 0
+ui.tutorial.rockStepID = 1
+ui.tutorial.railStepID = 2
+
 -- If the tutorial was completed
 function saveTutorialCompletionStatus(completed)
     love.filesystem.write("tutorial.dat", tostring(completed))
@@ -86,11 +92,11 @@ function ui:draw()
     if ui.tutorial then
         -- Draw the arrow
         cam:attach()
-        if ui.tutorialStep == 0 then
+        if ui.tutorialStep == ui.tutorial.treeStepID then
             love.graphics.draw(ui.tutorialArrow, ui.tutorialTree.x * globalScale - ui.tutorialArrow:getWidth()*globalScale, ui.tutorialTree.y * globalScale - ui.tutorialArrow:getHeight()*globalScale, nil, globalScale, globalScale)
-        elseif ui.tutorialStep == 1 then
+        elseif ui.tutorialStep == ui.tutorial.rockStepID then
             love.graphics.draw(ui.tutorialArrow, ui.tutorialRock.x * globalScale - ui.tutorialArrow:getWidth()*globalScale, ui.tutorialRock.y * globalScale - ui.tutorialArrow:getHeight()*globalScale, nil, globalScale, globalScale)
-        elseif ui.tutorialStep == 2 then
+        elseif ui.tutorialStep == ui.tutorial.railStepID then
             love.graphics.draw(ui.tutorialArrow, ui.tutorialRW.x * globalScale - ui.tutorialArrow:getWidth()*globalScale, ui.tutorialRW.y * globalScale - ui.tutorialArrow:getHeight()*globalScale, nil, globalScale, globalScale)
         else
             ui:endTutorial()
@@ -176,8 +182,6 @@ function ui:mousepressed(x, y, button, istouch)
 
                 difficulty = "easy"
 
-                loadAll()
-
                 minecart.speed = minecart.easySpeed
                 minecart.speedIncrease = minecart.speedIncreaseEasy
             end
@@ -190,8 +194,6 @@ function ui:mousepressed(x, y, button, istouch)
 
                 difficulty = "medium"
 
-                loadAll()
-
                 minecart.speed = minecart.mediumSpeed
                 minecart.speedIncrease = minecart.speedIncreaseMedium
             end
@@ -203,8 +205,6 @@ function ui:mousepressed(x, y, button, istouch)
                 pause = false
 
                 difficulty = "hard"
-
-                loadAll()
 
                 minecart.speed = minecart.hardSpeed
                 minecart.speedIncrease = minecart.speedIncreaseHard

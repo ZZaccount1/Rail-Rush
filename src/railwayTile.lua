@@ -3,7 +3,7 @@ rwTile = object.extend(object)
 -- Radius in which player can interact with the tile
 local interactionRadius = 90 * scaleRatio
 
-function rwTile:new(x, y, orientation)
+function rwTile:new(x, y, orientation, id)
     -- Main variables
     self.x = x
     self.y = y
@@ -11,6 +11,7 @@ function rwTile:new(x, y, orientation)
     self.h = 16 * globalScale
     self.spriteSheet = love.graphics.newImage("sprites/props.png")
     self.builded = false
+    self.id = id
     
     self.orientation = orientation
     if self.orientation == "h" then -- If horizontal, get the horizontal tile
@@ -36,7 +37,7 @@ function rwTile:draw()
 end
 
 function rwTile:onClick(x,y)
-    if self.builded then return end
+    if self.builded or ( ui.tutorial and ( not self.tutorial or ( self.tutorial and ui.tutorialStep ~= ui.tutorial.railStepID ))) then return end
 
     -- Convert the mouse coordinates to world coordinates
     local mouseX, mouseY = cam:worldCoords(x, y)
@@ -49,9 +50,10 @@ function rwTile:onClick(x,y)
         local distance = math.sqrt((selfX + 16/2 - player.x+(11/2)*globalScale)^2 + (selfY - player.y+(15/2)*globalScale)^2)
 
         -- If the player is close enough
-        if distance <= interactionRadius then            
+        if distance <= interactionRadius  then            
             -- And player has materials
             if ui.stoneAmount > 0 and ui.woodAmount > 0 then
+                
                 self.sfx:stop()
                 self.sfx:play()
                 self.builded = true

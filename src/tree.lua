@@ -50,9 +50,8 @@ function tree:drawAbove()
 end
 
 function tree:onClick(x,y)
-    if self.dead then 
-        return
-    end
+    if self.dead or ( ui.tutorial and ( not self.tutorial or ( self.tutorial and ui.tutorialStep ~= ui.tutorial.treeStepID ))) then return end
+
     -- Convert the mouse coordinates to world coordinates
     local mouseX, mouseY = cam:worldCoords(x, y)
 

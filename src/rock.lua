@@ -41,7 +41,7 @@ function rock:draw()
 end
 
 function rock:onClick(x,y)
-    if self.dead then return end
+    if self.dead or ( ui.tutorial and ( not self.tutorial or ( self.tutorial and ui.tutorialStep ~= ui.tutorial.rockStepID ))) then return end
 
     -- Convert the mouse coordinates to world coordinates
     local mouseX, mouseY = cam:worldCoords(x, y)
