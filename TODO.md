@@ -1,4 +1,5 @@
 # Soon 
+- [ ] Entities highlight
 - [ ] Tree collider bigger on the super easy
 - [ ] Different interaction radius on different difficulties
 - [ ] Make the tutorial more intuitive
