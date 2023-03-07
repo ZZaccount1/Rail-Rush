@@ -18,9 +18,6 @@ player.colliderH = 5
 local yOffset = player.colliderH * globalScale
 
 function player:load()
-    if difficulty == "easy" then print("pussy") end
-    if difficulty == "hard" then print("gigachad") end
-
     -- Load the spritesheet
     player.spriteSheet = love.graphics.newImage('sprites/player.png')
     player.grid = anim8.newGrid(tileSizeX, tileSizeY, player.spriteSheet:getWidth(), player.spriteSheet:getHeight())
