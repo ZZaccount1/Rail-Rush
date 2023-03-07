@@ -17,5 +17,4 @@
 - [ ] Sprint/fatigue
 
 # Bugs
-- [ ] Can earn materials before the minecart starts, in tutorial
 
