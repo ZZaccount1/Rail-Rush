@@ -1,6 +1,6 @@
 # Soon 
 - [ ] Tree collider bigger on the super easy
-- [ ] Player outline when hes not visible
+- [ ] Player change brightness when hes not visible
 - [ ] Entities highlight
 - [ ] Make the tutorial more intuitive
 - [ ] Settings menu
