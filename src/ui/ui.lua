@@ -99,7 +99,7 @@ function ui:draw()
         -- Draw the arrow
         cam:attach()
         if ui.tutorialStep == ui.tutorial.treeStepID then
-            love.graphics.draw(ui.tutorialArrow, ui.tutorialTree.x * globalScale - ui.tutorialArrow:getWidth()*globalScale, ui.tutorialTree.y * globalScale - ui.tutorialArrow:getHeight()*globalScale, nil, globalScale, globalScale)
+            love.graphics.draw(ui.tutorialArrow, ui.tutorialTree.x * globalScale - 4 - ui.tutorialArrow:getWidth()*globalScale, ui.tutorialTree.y * globalScale + 48 - ui.tutorialArrow:getHeight()*globalScale, nil, globalScale, globalScale)
         elseif ui.tutorialStep == ui.tutorial.rockStepID then
             love.graphics.draw(ui.tutorialArrow, ui.tutorialRock.x * globalScale - ui.tutorialArrow:getWidth()*globalScale, ui.tutorialRock.y * globalScale - ui.tutorialArrow:getHeight()*globalScale, nil, globalScale, globalScale)
         elseif ui.tutorialStep == ui.tutorial.railStepID then
