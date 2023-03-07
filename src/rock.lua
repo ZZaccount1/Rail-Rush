@@ -33,6 +33,21 @@ function rock:new(x, y)
                      love.audio.newSource("sounds/sfx/mining/mine3.mp3", "static")}
 end
 
+function rock:isHovering()
+    local x, y = love.mouse.getPosition()
+
+    -- Convert the mouse coordinates to world coordinates
+    local mouseX, mouseY = cam:worldCoords(x, y)
+    local selfX = self.x * globalScale
+    local selfY = self.y * globalScale
+
+    -- Check if the mouse click was within the boundaries of the tree
+    if mouseX >= selfX and mouseX <= selfX + self.w and mouseY >= selfY and mouseY <= selfY + self.h then
+        return true
+    end
+    return false
+end
+
 function rock:draw()
     if self.dead then return end
 
@@ -51,13 +66,12 @@ end
 function rock:onClick(x,y)
     if self.dead or ( ui.tutorial and ( not self.tutorial or ( self.tutorial and ui.tutorialStep ~= ui.tutorial.rockStepID ))) then return end
 
-    -- Convert the mouse coordinates to world coordinates
-    local mouseX, mouseY = cam:worldCoords(x, y)
     local selfX = self.x * globalScale
     local selfY = self.y * globalScale
+    local hovering = self:isHovering()
 
     -- Check if the mouse click was within the boundaries of the tree
-    if mouseX >= selfX and mouseX <= selfX + self.w and mouseY >= selfY and mouseY <= selfY + self.h then
+    if hovering then
         local distance = math.sqrt((selfX + 16/2 - player.x+(11/2)*globalScale)^2 + (selfY - player.y+(15/2)*globalScale)^2)
 
         if distance <= interactionRadius then

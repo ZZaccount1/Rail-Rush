@@ -22,7 +22,7 @@ function cursor:draw()
         local selfY = v.y * globalScale
     
         -- Check if the mouse click was within the boundaries of the tree
-        if mouseX >= selfX and mouseX <= selfX + v.w and mouseY >= selfY and mouseY <= selfY + v.h then
+        if v:isHovering() then
             cursorSprite = cursor.highlighted
             v.hovered = true
             break

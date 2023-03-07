@@ -53,6 +53,14 @@ function map:load()
     world:generateSolid()
 end
 
+function map:gameStart()
+    for i,v in ipairs(map.entities) do
+        if v.gameStart then
+            v:gameStart()
+        end
+    end
+end
+
 function map:draw()
     cam:attach()
     love.graphics.scale(globalScale)

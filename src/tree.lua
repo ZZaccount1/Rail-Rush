@@ -11,6 +11,9 @@ function tree:new(x, y)
     self.quad.trunk = love.graphics.newQuad(16*0, 16*3, 16*1, 16*1, self.spriteSheet)
     self.quad.top = love.graphics.newQuad(16*0, 16*1, 16*1, 16*2, self.spriteSheet)
 
+    self.clickW = 0
+    self.clickH = 0
+
     -- Create and setup the collider
     self.collider = worldMap:newPolygonCollider({self.x*globalScale, (self.y*1)*globalScale,
                                                  self.x*globalScale + 16*globalScale, (self.y*1)*globalScale,
@@ -26,6 +29,30 @@ function tree:new(x, y)
     self.sfx.chop = {love.audio.newSource("sounds/sfx/treeChopping/chop1.mp3", "static"), 
                      love.audio.newSource("sounds/sfx/treeChopping/chop2.mp3", "static"),
                      love.audio.newSource("sounds/sfx/treeChopping/chop3.mp3", "static")}
+end
+
+function tree:gameStart()
+    if difficulty == "easy" then
+        -- TODO: full size interaction radius
+        self.clickH = -25
+        self.h = (16*3-(32-math.abs(self.clickH)))*globalScale
+    end
+end
+
+function tree:isHovering()
+    local x, y = love.mouse.getPosition()
+    
+    -- Convert the mouse coordinates to world coordinates
+    local mouseX, mouseY = cam:worldCoords(x, y)
+
+    local selfX = self.x * globalScale
+    local selfY = (self.y + self.clickH) * globalScale
+    
+    if mouseX >= selfX and mouseX <= selfX + self.w and mouseY >= selfY and mouseY <= selfY + self.h then
+        return true
+    end
+
+    return false
 end
 
 -- Default draw
@@ -51,7 +78,7 @@ function tree:drawAbove()
     love.graphics.scale(globalScale)
 
     -- Setup brightness
-    if self.hovered then 
+    if self.hovered then
         love.graphics.setShader(brightnessShader)
         brightnessShader:send("brightness", 1.5)
     end
@@ -67,14 +94,12 @@ end
 function tree:onClick(x,y)
     if self.dead or ( ui.tutorial and ( not self.tutorial or ( self.tutorial and ui.tutorialStep ~= ui.tutorial.treeStepID ))) then return end
 
-    -- Convert the mouse coordinates to world coordinates
-    local mouseX, mouseY = cam:worldCoords(x, y)
-
     local selfX = self.x * globalScale
-    local selfY = (self.y) * globalScale
+    local selfY = self.y * globalScale
+    local hovering = self:isHovering()
 
     -- Check if the mouse click was within the boundaries of the tree
-    if mouseX >= selfX and mouseX <= selfX + self.w and mouseY >= selfY and mouseY <= selfY + self.h then
+    if hovering then
         local distance = math.sqrt((selfX + 16/2 - player.x+(11/2)*globalScale)^2 + (selfY - player.y+(15/2)*globalScale)^2)
 
         if distance <= interactionRadius then

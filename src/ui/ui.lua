@@ -11,7 +11,7 @@ ui.pickDifficulty = false
 ui.drawWin = false
 ui.drawLose = false
 
-difficulty = ""
+difficulty = "easy"
 
 local iconScale = 2.5 * scaleRatio
 local buttons = {}
@@ -186,6 +186,8 @@ function ui:mousepressed(x, y, button, istouch)
 
                 minecart.speed = minecart.easySpeed
                 minecart.speedIncrease = minecart.speedIncreaseEasy
+
+                gameStart()
             end
 
             -- Check if the mouse is within the Medium button
@@ -200,6 +202,8 @@ function ui:mousepressed(x, y, button, istouch)
                 
                 minecart.speed = minecart.mediumSpeed
                 minecart.speedIncrease = minecart.speedIncreaseMedium
+
+                gameStart()
             end
 
             -- Check if the mouse is within the Hard button
@@ -214,6 +218,8 @@ function ui:mousepressed(x, y, button, istouch)
 
                 minecart.speed = minecart.hardSpeed
                 minecart.speedIncrease = minecart.speedIncreaseHard
+                
+                gameStart()
             end
         end
     end
