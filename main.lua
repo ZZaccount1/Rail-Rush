@@ -3,7 +3,6 @@ windowH = 0
 
 globalScale = 3.2
 scaleRatio = globalScale / 3.2
-print(scaleRatio)
 
 release = false
 debug = false
@@ -41,6 +40,10 @@ function love.load()
     bgMusic:setVolume(0.05)
     bgMusic:setLooping(true)
     bgMusic:play()
+end
+
+function gameStart()
+    map:gameStart()
 end
 
 function love.update(dt)
