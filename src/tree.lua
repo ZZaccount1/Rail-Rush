@@ -30,18 +30,36 @@ end
 
 -- Default draw
 function tree:draw()
-    if not self.dead then
-        love.graphics.draw(self.spriteSheet, self.quad.trunk, self.x, self.y)
+    if self.dead then return end
+
+    -- Setup brightness
+    if self.hovered then 
+        love.graphics.setShader(brightnessShader)
+        brightnessShader:send("brightness", 1.5)
     end
+
+    love.graphics.draw(self.spriteSheet, self.quad.trunk, self.x, self.y)
+
+    love.graphics.setShader()
 end
 
 -- The drawing in this function will be above the player
 function tree:drawAbove()
+    if self.dead then return end
+    
     cam:attach()
     love.graphics.scale(globalScale)
-    if not self.dead then
-        love.graphics.draw(self.spriteSheet, self.quad.top, self.x, self.y-32)
+
+    -- Setup brightness
+    if self.hovered then 
+        love.graphics.setShader(brightnessShader)
+        brightnessShader:send("brightness", 1.5)
     end
+
+    love.graphics.draw(self.spriteSheet, self.quad.top, self.x, self.y-32)
+
+    love.graphics.setShader()
+
     love.graphics.scale(1)
     cam:detach()
 end

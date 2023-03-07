@@ -10,6 +10,8 @@ function rwTile:new(x, y, orientation, id)
     self.builded = false
     self.id = id
     
+    self.hovered = false
+
     self.orientation = orientation
     if self.orientation == "h" then -- If horizontal, get the horizontal tile
         self.quad = love.graphics.newQuad(16*3, 0, 16, 16, self.spriteSheet)
@@ -29,7 +31,15 @@ function rwTile:draw()
     if self.builded then
         love.graphics.draw(self.spriteSheet, self.quad, self.x, self.y)
     else
+        -- Draw the sprite
+        if self.hovered then 
+            love.graphics.setShader(brightnessShader)
+            brightnessShader:send("brightness", 1.5)
+        end
+
         love.graphics.draw(self.spriteSheet, self.dead, self.x, self.y)
+
+        love.graphics.setShader()
     end
 end
 

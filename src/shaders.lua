@@ -1,0 +1,1 @@
+brightnessShader = love.graphics.newShader("shaders/brightness.glsl")

@@ -8,6 +8,8 @@ function rock:new(x, y)
     self.h = 16 * globalScale
     self.spriteSheet = love.graphics.newImage("sprites/props.png")
     
+    self.hovered = false
+    
     -- Pick a random sprite between 2 of them
     local random = math.random(2)
     if random == 1 then
@@ -34,7 +36,16 @@ end
 function rock:draw()
     if self.dead then return end
 
+    -- Change the brightness
+    if self.hovered then 
+        love.graphics.setShader(brightnessShader)
+        brightnessShader:send("brightness", 1.5)
+    end
+
+    -- Draw the sprite
     love.graphics.draw(self.spriteSheet, self.quad, self.x, self.y)
+    
+    love.graphics.setShader()
 end
 
 function rock:onClick(x,y)
@@ -42,7 +53,6 @@ function rock:onClick(x,y)
 
     -- Convert the mouse coordinates to world coordinates
     local mouseX, mouseY = cam:worldCoords(x, y)
-
     local selfX = self.x * globalScale
     local selfY = self.y * globalScale
 

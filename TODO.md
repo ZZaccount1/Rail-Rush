@@ -1,6 +1,5 @@
 # Soon 
 - [ ] Tree collider bigger on the super easy
-- [ ] Player change brightness when hes not visible
 - [ ] Entities highlight
 - [ ] Make the tutorial more intuitive
 - [ ] Settings menu
@@ -23,6 +22,7 @@
 - [ ] Can earn materials before the minecart starts, in tutorial
 
 # DONE
+- [x] Player change brightness when hes not visible
 - [x] Different interaction radius on different difficulties
 - [x] Broken railway sprite
 - [x] Custom cursor
