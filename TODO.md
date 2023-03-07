@@ -1,14 +1,13 @@
 # Soon 
-- [ ] Make the tutorial more intuitive
+- [ ] Mobiles support
 - [ ] Settings menu
 - [ ] Scale setting
 
 # Maybe Soon
-- [ ] Mobiles support
+- [ ] Entities interaxction animations(eg tree shaking)
 - [ ] Splash screen
 
 # Not Soon
-- [ ] Entities interaction animations(eg tree shaking)
 - [ ] Procedural generation
 - [ ] Rails fixed amount text (after the procedural generation)
 - [ ] Pickaxe and animation
