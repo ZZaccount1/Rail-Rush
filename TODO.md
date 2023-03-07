@@ -1,5 +1,4 @@
 # Soon 
-- [ ] Tree collider bigger on the super easy
 - [ ] Make the tutorial more intuitive
 - [ ] Settings menu
 - [ ] Scale setting
@@ -21,6 +20,7 @@
 - [ ] Can earn materials before the minecart starts, in tutorial
 
 # DONE
+- [x] Tree collider bigger on the super easy
 - [x] Player change brightness when hes not visible
 - [x] Different interaction radius on different difficulties
 - [x] Broken railway sprite
