@@ -1,6 +1,5 @@
 # Soon 
 - [ ] Tree collider bigger on the super easy
-- [ ] Entities highlight
 - [ ] Make the tutorial more intuitive
 - [ ] Settings menu
 - [ ] Scale setting
