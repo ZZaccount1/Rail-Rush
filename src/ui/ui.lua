@@ -60,6 +60,23 @@ function ui:calculateButtonsPos()
 end
 
 function ui:load()
+    -- Gooi setup
+    style = {
+        showBorder = true,
+        bgColor = {0.208, 0.220, 0.222, 0.5},
+    }
+    gooi.setStyle(style)
+
+    local joyOffsetX = 25
+    local joyOffsetY = 100
+    local joySize = 200
+
+    movementJoystick = gooi.newJoy({
+        x = joyOffsetX,
+        y = windowH - joySize - joyOffsetY,
+        size = joySize,
+    })
+    
     -- Create button variables
     buttons.easy = {x=0, y=0, w=125*scaleRatio, h=40*scaleRatio, text="Super Easy"}
     buttons.medium = {x=0, y=0, w=125*scaleRatio, h=40*scaleRatio, text="Very Easy"}
@@ -85,6 +102,10 @@ function ui:load()
         ui.tutorial = false
         ui.pickDifficulty= true
     end
+end
+
+function ui:update(dt)
+    movementJoystick:setVisible(mobile)
 end
 
 function ui:draw()
@@ -236,6 +257,7 @@ end
 return
 {
     load = function(...) return ui:load(...) end,
+    update = function(...) return ui:update(...) end,
     mousepressed = function(...) return ui:mousepressed(...) end,
     keypressed = function(...) return ui:keypressed(...) end,
 }

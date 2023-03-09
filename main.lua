@@ -9,9 +9,16 @@ debug = false
 
 pause = false
 
+mobile = false
+
 function love.load()
     -- Disable smooth scaling
     love.graphics.setDefaultFilter("nearest", "nearest")
+
+    -- Check if playing on a smartphone
+    if love.system.getOS() == "Android" or love.system.getOS() == "iOS" then
+        mobile = true
+    end
 
     -- Get the size of the window
     windowW = love.graphics.getWidth()
@@ -24,6 +31,7 @@ function love.load()
     camera = require("libs.camera")
     object = require("libs.classic")
     wf = require("libs.windfield")
+    require "libs.gooi"
 
     -- Require and load every single script
     af.requireAll("src")
@@ -48,6 +56,7 @@ end
 
 function love.update(dt)
     -- Update from the scripts
+    gooi:update(dt)
     world:update(dt)
     player:update(dt)
     af:update(dt)
@@ -75,6 +84,7 @@ function love.draw()
 
     -- Draw the ui
     ui:draw()
+    gooi.draw()
     cursor:draw()
 end
 
@@ -117,11 +127,17 @@ function love.keypressed(k, sc, r)
         elseif k == "n" then
             love.filesystem.remove("tutorial.dat")
             love.event.quit("restart")
+        elseif k == "b" then
+            mobile = not mobile
         end
     end
 end
 
+function love.mousereleased(x, y, button) gooi.released() end
+
 function love.mousepressed(x, y, button, istouch)
+    gooi.pressed()
+
     if button == 1 and not pause then
        map:onClick(x,y)
     end

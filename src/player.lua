@@ -52,43 +52,40 @@ function player:update(dt)
     end
 
     -- Movement
+    if mobile then
+        if movementJoystick:xValue() ~= 0 or movementJoystick:yValue() ~= 0 then
+            vx = movementJoystick:xValue() * player.speed
+            vy = movementJoystick:yValue() * player.speed
+    
+            -- Animation
+            if vx > 0 then
+                player:animationSetup('d')
+            else
+                player:animationSetup('a')
+            end
+        end
+    end
+
+    -- Keyboard
     -- Up
     if love.keyboard.isDown("up") or love.keyboard.isDown("w") then
         vy = -player.speed
-        
-        -- Animation
-        if player.facingRight then
-            player.anim = player.animations.right
-        else
-            player.anim = player.animations.left
-        end 
+        player:animationSetup('w')
     end
     -- Down
     if love.keyboard.isDown("down") or love.keyboard.isDown("s") then
         vy = player.speed
-        
-        -- Animation
-        if player.facingRight then
-            player.anim = player.animations.right
-        else
-            player.anim = player.animations.left
-        end
+        player:animationSetup('s')
     end
     -- Right
     if love.keyboard.isDown("right") or love.keyboard.isDown("d") then
         vx = player.speed
-        player.facingRight = true
-        
-        -- Animation
-        player.anim = player.animations.right
+        player:animationSetup('d')
     end
     -- Left
     if love.keyboard.isDown("left") or love.keyboard.isDown("a") then
         vx = -player.speed    
-        player.facingRight = false
-
-        -- Animation
-        player.anim = player.animations.left
+        player:animationSetup('a')
     end
 
     -- Update animation
@@ -127,6 +124,22 @@ function player:draw()
     player.anim:draw(player.spriteSheet, player.x, player.y-yOffset, nil, globalScale)
     
     cam:detach()
+end
+
+function player:animationSetup(orientation)
+    if orientation == 'w' or orientation == 's' then
+        if player.facingRight then
+            player.anim = player.animations.right
+        else
+            player.anim = player.animations.left
+        end 
+    elseif orientation == 'd' then
+        player.facingRight = true
+        player.anim = player.animations.right
+    elseif orientation == 'a' then
+        player.facingRight = false
+        player.anim = player.animations.left
+    end
 end
 
 return
