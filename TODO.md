@@ -1,5 +1,7 @@
 # Soon 
 - [ ] Mobiles support
+  - [ ] joystick movement
+  - [ ] joystick attack(entity interaction), with a line
 - [ ] Settings menu
 - [ ] Scale setting
 
