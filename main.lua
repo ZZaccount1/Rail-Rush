@@ -48,6 +48,11 @@ function love.load()
     bgMusic:setVolume(0.05)
     bgMusic:setLooping(true)
     bgMusic:play()
+
+    -- Turn off the audio by default if not release
+    if not release then
+        love.audio.setVolume(0)
+    end
 end
 
 function gameStart()
