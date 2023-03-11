@@ -76,6 +76,15 @@ function ui:load()
         y = windowH - joySize - joyOffsetY,
         size = joySize,
     })
+    attackJoystick = gooi.newJoy({
+        x = windowW - joySize - joyOffsetX,
+        y = windowH - joySize - joyOffsetY,
+        size = joySize,
+    }):onRelease(function()
+        if player.attackLine.hoveredObj then
+            player.attackLine.hoveredObj:hit()
+        end
+    end)
     
     -- Create button variables
     buttons.easy = {x=0, y=0, w=125*scaleRatio, h=40*scaleRatio, text="Super Easy"}
@@ -106,6 +115,7 @@ end
 
 function ui:update(dt)
     movementJoystick:setVisible(mobile)
+    attackJoystick:setVisible(mobile)
 end
 
 function ui:draw()

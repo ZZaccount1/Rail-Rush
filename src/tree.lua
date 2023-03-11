@@ -48,6 +48,13 @@ function tree:isHovering()
     local selfX = self.x * globalScale
     local selfY = (self.y + self.clickH) * globalScale
     
+    if mobile then
+        if lineSquareColl(selfX, selfY, self.w, self.h, player.x+(player.w * globalScale) / 2, player.y+(player.h * globalScale) / 2, player.attackLine.x, player.attackLine.y) then
+            player.attackLine.hoveredObj = self
+            return true
+        end
+    end
+
     if mouseX >= selfX and mouseX <= selfX + self.w and mouseY >= selfY and mouseY <= selfY + self.h then
         return true
     end
@@ -92,6 +99,10 @@ function tree:drawAbove()
 end
 
 function tree:onClick(x,y)
+    self:hit()
+end
+
+function tree:hit()
     if self.dead or ( ui.tutorial and ( not self.tutorial or ( self.tutorial and ui.tutorialStep ~= ui.tutorial.treeStepID ))) then return end
 
     local selfX = self.x * globalScale

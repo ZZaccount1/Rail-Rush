@@ -35,6 +35,13 @@ function rwTile:isHovering()
     local selfX = self.x * globalScale
     local selfY = self.y * globalScale
 
+    if mobile then
+        if lineSquareColl(selfX, selfY, self.w, self.h, player.x+(player.w * globalScale) / 2, player.y+(player.h * globalScale) / 2, player.attackLine.x, player.attackLine.y) then
+            player.attackLine.hoveredObj = self
+            return true
+        end
+    end
+
     -- Check if the mouse click was within the boundaries of the tree
     if mouseX >= selfX and mouseX <= selfX + self.w and mouseY >= selfY and mouseY <= selfY + self.h then
         return true
@@ -59,6 +66,10 @@ function rwTile:draw()
 end
 
 function rwTile:onClick(x,y)
+    self:hit()
+end
+
+function rwTile:hit()
     if self.builded or ( ui.tutorial and ( not self.tutorial or ( self.tutorial and ui.tutorialStep ~= ui.tutorial.railStepID ))) then return end
 
     local selfX = self.x * globalScale

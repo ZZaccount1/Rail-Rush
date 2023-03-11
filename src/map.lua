@@ -86,6 +86,32 @@ function map:onClick(x,y)
     end
 end
 
+function lineSquareColl(squareX, squareY, squareW, squareH, line1X, line1Y, line2X, line2Y)
+    -- check if any of the line endpoints is inside the square
+    if (line1X >= squareX and line1X <= squareX + squareW and line1Y >= squareY and line1Y <= squareY + squareH) or
+       (line2X >= squareX and line2X <= squareX + squareW and line2Y >= squareY and line2Y <= squareY + squareH) then
+      return true
+    end
+  
+    -- check if any of the square's sides intersect with the line segment
+    local corners = {{squareX, squareY}, {squareX + squareW, squareY}, {squareX, squareY + squareH}, {squareX + squareW, squareY + squareH}}
+    for i = 1, #corners do
+        local j = i % #corners + 1
+        if doLineSegmentsIntersect(line1X, line1Y, line2X, line2Y, corners[i][1], corners[i][2], corners[j][1], corners[j][2]) then
+            return true
+        end
+    end
+  
+    return false
+end
+  
+  -- helper function to check if two line segments intersect
+function doLineSegmentsIntersect(aX, aY, bX, bY, cX, cY, dX, dY)
+    local s1_x, s1_y, s2_x, s2_y = bX - aX, bY - aY, dX - cX, dY - cY
+    local s, t = (-s1_y * (aX - cX) + s1_x * (aY - cY)) / (-s2_x * s1_y + s1_x * s2_y), ( s2_x * (aY - cY) - s2_y * (aX - cX)) / (-s2_x * s1_y + s1_x * s2_y)
+    return s >= 0 and s <= 1 and t >= 0 and t <= 1
+end
+
 return
 {
     load = function(...) return map:load(...) end,

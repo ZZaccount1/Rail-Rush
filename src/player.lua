@@ -53,6 +53,7 @@ function player:update(dt)
 
     -- Movement
     if mobile then
+        player.attackLine = {}
         if movementJoystick:xValue() ~= 0 or movementJoystick:yValue() ~= 0 then
             vx = movementJoystick:xValue() * player.speed
             vy = movementJoystick:yValue() * player.speed
@@ -120,6 +121,31 @@ end
 
 function player:draw()
     cam:attach()
+
+    if mobile then
+        local pX = player.x + (player.w * globalScale) / 2
+        local pY = player.y + (player.h * globalScale) / 2
+        local knobX = attackJoystick:xValue() * interactionRadius
+        local knobY = attackJoystick:yValue() * interactionRadius
+
+        -- Calculate the length of the line using the Pythagorean theorem
+        local lineLength = math.sqrt(knobX^2 + knobY^2)
+
+        -- Scale the x and y values of the knob position to maintain the line length
+        if lineLength > 0 then
+            knobX = knobX * (interactionRadius / lineLength)
+            knobY = knobY * (interactionRadius / lineLength)
+        end
+
+        player.attackLine.x = knobX + pX
+        player.attackLine.y = knobY + pY
+        player.attackLine.thickness = 5
+
+        love.graphics.setLineWidth(player.attackLine.thickness)
+        love.graphics.setColor(1,1,1,0.60)
+        love.graphics.line(pX, pY, player.attackLine.x, player.attackLine.y)
+        love.graphics.setColor(1,1,1,1)
+    end
     
     player.anim:draw(player.spriteSheet, player.x, player.y-yOffset, nil, globalScale)
     
