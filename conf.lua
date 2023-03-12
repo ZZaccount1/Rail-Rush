@@ -1,6 +1,6 @@
 function love.conf(t)
     t.identity = "Rail Rush"           -- The name of the save directory (string)
-    t.version = "11.4"                 -- The LÖVE version this game was made for (string)
+  --t.version = "11.4"                 -- The LÖVE version this game was made for (string)
     t.console = true                   -- Attach a console (boolean, Windows only)
 
     t.window.title = "Rail Rush"       -- The window title (string)
