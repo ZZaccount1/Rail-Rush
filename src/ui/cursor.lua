@@ -11,7 +11,6 @@ function cursor:load()
 end
 
 function cursor:draw()
-
     local x, y = love.mouse.getPosition()
     
     -- Convert the mouse coordinates to world coordinates
@@ -23,14 +22,22 @@ function cursor:draw()
         local selfY = v.y * globalScale
     
         -- Check if the mouse click was within the boundaries of the tree
-        if v:isHovering() then
+        local deadOrBuilded = nil
+
+        if v.dead == false or v.dead == true then
+            deadOrBuilded = v.dead
+        else
+            deadOrBuilded = v.builded
+        end
+
+        if v:isHovering() and not deadOrBuilded then
             cursorSprite = cursor.highlighted
             v.hovered = true
             break
-        else 
+        else
             cursorSprite = cursor.default
             v.hovered = false
-        end
+        end 
     end
     
     if not mobile then

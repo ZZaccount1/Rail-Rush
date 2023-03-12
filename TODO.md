@@ -16,7 +16,6 @@
 - [ ] Sprint/fatigue
 
 # Bugs
-- [ ] Custom cursor is changing colors even if the object is dead
 - [ ] Sometimes after picking the difficulty player gets teleported
 - [ ] Mobile's support
   - [ ] joysticks are too on the left side
