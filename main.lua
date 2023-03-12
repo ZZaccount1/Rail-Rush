@@ -6,7 +6,7 @@ pcScale = 3.2
 globalScale = pcScale
 scaleRatio = globalScale / 3.2
 
-release = false
+release = true
 debug = false
 
 pause = false
@@ -20,12 +20,15 @@ function love.load()
     -- Check if playing on a smartphone
     if love.system.getOS() == "Android" or love.system.getOS() == "iOS" then
         mobile = true
+        --love.window.setMode(0, 0, { fullscreen = true, fullscreentype = "desktop" })
     end
 
+    -- Fullscrean if debug
     if not release then
         love.window.setFullscreen(false)
     end
 
+    -- Different scale for mobile devices
     if mobile then
         globalScale = mobileScale
     end
@@ -70,6 +73,14 @@ function gameStart()
 end
 
 function love.update(dt)
+    -- Hide status bar and home buttons for mobile devices
+    if mobile then
+        local _, _, flags = love.window.getMode()
+        if flags.fullscreen and not flags.usedpiscale then
+          love.window.setMode(0, 0, { fullscreen = true, fullscreentype = "desktop", usedpiscale = false })
+        end
+    end
+
     -- Update from the scripts
     gooi:update(dt)
     world:update(dt)

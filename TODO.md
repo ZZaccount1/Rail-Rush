@@ -19,7 +19,6 @@
 - [ ] Custom cursor is changing colors even if the object is dead
 - [ ] Sometimes after picking the difficulty player gets teleported
 - [ ] Mobile's support
-  - [ ] joysticks too big and are at the top
+  - [ ] joysticks are too on the left side
   - [ ] no multitouch
-  - [ ] Hide status bar in the game
   - [ ] Press Y to restart
