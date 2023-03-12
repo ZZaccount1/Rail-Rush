@@ -17,6 +17,8 @@ player.colliderH = 5
 
 local yOffset = player.colliderH * globalScale
 
+player.attackLine = {}
+
 function player:load()
     -- Load the spritesheet
     player.spriteSheet = love.graphics.newImage('sprites/player.png')
@@ -53,7 +55,6 @@ function player:update(dt)
 
     -- Movement
     if mobile then
-        player.attackLine = {}
         if movementJoystick:xValue() ~= 0 or movementJoystick:yValue() ~= 0 then
             vx = movementJoystick:xValue() * player.speed
             vy = movementJoystick:yValue() * player.speed
@@ -145,6 +146,7 @@ function player:draw()
         love.graphics.setColor(1,1,1,0.60)
         love.graphics.line(pX, pY, player.attackLine.x, player.attackLine.y)
         love.graphics.setColor(1,1,1,1)
+        love.graphics.setLineWidth(1)
     end
     
     player.anim:draw(player.spriteSheet, player.x, player.y-yOffset, nil, globalScale)

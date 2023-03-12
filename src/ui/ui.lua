@@ -187,11 +187,13 @@ function ui:difficultyMenuDraw()
     love.graphics.print("Pick the difficulty", windowW/2 - ui.defaultFont:getWidth("Pick the difficulty")/2, 25)
     
     -- Draw the bg
+    love.graphics.setLineWidth(1)
     love.graphics.setColor(1,1,1,1)
     love.graphics.rectangle("line", buttons.easy.x,   buttons.easy.y,   buttons.easy.w,   buttons.easy.h)
     love.graphics.rectangle("line", buttons.medium.x, buttons.medium.y, buttons.medium.w, buttons.medium.h)
     love.graphics.rectangle("line", buttons.hard.x,   buttons.hard.y,   buttons.hard.w,   buttons.hard.h)
     love.graphics.setColor(1,1,1,1)
+    love.graphics.setLineWidth(1)
 
     -- Draw the text for each button
     local easyTextSize = ui.defaultFont:getWidth("Super Easy")/2
