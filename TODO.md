@@ -23,3 +23,4 @@
   - [ ] no multitouch
   - [ ] Hide status bar in the game
   - [ ] At the start theres an error saying that the game was made using love 11.4, but it runs using 11.3
+  - [ ] Can chop trees by just clicking on them (decide, should i keep it, or not)
