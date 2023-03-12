@@ -16,4 +16,9 @@
 - [ ] Sprint/fatigue
 
 # Bugs
-
+- [ ] Mobiles support
+  - [ ] Error player.lua:140 attackLine is nil
+  - [ ] joysticks too big and are at the top
+  - [ ] no multitouch
+  - [ ] Hide status bar in the game
+  - [ ] At the start theres an error saying that the game was made using love 11.4, but it runs using 11.3
