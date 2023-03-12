@@ -6,7 +6,7 @@ pcScale = 3.2
 globalScale = pcScale
 scaleRatio = globalScale / 3.2
 
-release = true
+release = false
 debug = false
 
 pause = false
@@ -23,7 +23,7 @@ function love.load()
     end
 
     if not release then
-        love.window.setFullscreen(false, "desktop")
+        love.window.setFullscreen(false)
     end
 
     if mobile then
