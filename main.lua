@@ -6,7 +6,7 @@ pcScale = 3.2
 globalScale = pcScale
 scaleRatio = globalScale / 3.2
 
-release = false
+release = true
 debug = false
 
 pause = false
@@ -20,6 +20,10 @@ function love.load()
     -- Check if playing on a smartphone
     if love.system.getOS() == "Android" or love.system.getOS() == "iOS" then
         mobile = true
+    end
+
+    if not release then
+        love.window.setFullscreen(false, "desktop")
     end
 
     if mobile then
