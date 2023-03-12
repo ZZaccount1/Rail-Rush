@@ -23,3 +23,4 @@
   - [ ] no multitouch
   - [ ] Hide status bar in the game
   - [ ] Can chop trees by just clicking on them (decide, should i keep it, or not)
+  - [ ] Press y to restart
