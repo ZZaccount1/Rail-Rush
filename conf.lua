@@ -33,5 +33,7 @@ function love.conf(t)
     t.modules.system = true            -- Enable the system module (boolean)
     t.modules.timer = true             -- Enable the timer module (boolean)
     t.modules.window = true            -- Enable the window module (boolean)
+
+    t.externalstorage = true
     
 end
