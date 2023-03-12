@@ -67,9 +67,9 @@ function ui:load()
     }
     gooi.setStyle(style)
 
-    local joyOffsetX = 25
-    local joyOffsetY = 100
-    local joySize = 200
+    local joyOffsetX = 12 * scaleRatio
+    local joyOffsetY = 50 * scaleRatio
+    local joySize = 100 * scaleRatio
 
     movementJoystick = gooi.newJoy({
         x = joyOffsetX,

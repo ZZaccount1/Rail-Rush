@@ -17,10 +17,9 @@
 
 # Bugs
 - [ ] Custom cursor is changing colors even if the object is dead
-- [ ] Mobiles support
-  - [ ] Error player.lua:140 attackLine is nil
+- [ ] Sometimes after picking the difficulty player gets teleported
+- [ ] Mobile's support
   - [ ] joysticks too big and are at the top
   - [ ] no multitouch
   - [ ] Hide status bar in the game
-  - [ ] Can chop trees by just clicking on them (decide, should i keep it, or not)
-  - [ ] Press y to restart
+  - [ ] Press Y to restart

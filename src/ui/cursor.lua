@@ -11,6 +11,8 @@ function cursor:load()
 end
 
 function cursor:draw()
+    if mobile then return 0 end
+
     local x, y = love.mouse.getPosition()
     
     -- Convert the mouse coordinates to world coordinates

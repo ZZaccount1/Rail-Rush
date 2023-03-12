@@ -1,7 +1,9 @@
 windowW = 0
 windowH = 0
 
-globalScale = 3.2
+mobileScale = 2
+pcScale = 3.2
+globalScale = pcScale
 scaleRatio = globalScale / 3.2
 
 release = false
@@ -18,6 +20,10 @@ function love.load()
     -- Check if playing on a smartphone
     if love.system.getOS() == "Android" or love.system.getOS() == "iOS" then
         mobile = true
+    end
+
+    if mobile then
+        globalScale = mobileScale
     end
 
     -- Get the size of the window
