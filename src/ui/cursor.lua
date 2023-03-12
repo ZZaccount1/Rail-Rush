@@ -11,7 +11,6 @@ function cursor:load()
 end
 
 function cursor:draw()
-    if mobile then return 0 end
 
     local x, y = love.mouse.getPosition()
     
@@ -33,8 +32,10 @@ function cursor:draw()
             v.hovered = false
         end
     end
-
-    love.graphics.draw(cursor.spriteSheet, cursorSprite, x, y, nil, scale, scale)
+    
+    if not mobile then
+        love.graphics.draw(cursor.spriteSheet, cursorSprite, x, y, nil, scale, scale)
+    end
 end
 
 return 
