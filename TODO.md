@@ -16,6 +16,7 @@
 - [ ] Sprint/fatigue
 
 # Bugs
+- [ ] Custom cursor is changing colors even if the object is dead
 - [ ] Mobiles support
   - [ ] Error player.lua:140 attackLine is nil
   - [ ] joysticks too big and are at the top
