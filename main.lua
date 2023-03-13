@@ -6,7 +6,7 @@ pcScale = 3.2
 globalScale = pcScale
 scaleRatio = globalScale / 3.2
 
-release = true
+release = false
 debug = false
 
 pause = false
@@ -69,6 +69,8 @@ function love.load()
 end
 
 function gameStart()
+    player.collider:setPosition(200 * scaleRatio, 875 * scaleRatio)
+
     map:gameStart()
 end
 

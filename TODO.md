@@ -16,7 +16,6 @@
 - [ ] Sprint/fatigue
 
 # Bugs
-- [ ] Sometimes after picking the difficulty player gets teleported
 - [ ] Mobile's support
   - [ ] joysticks are too on the left side
   - [ ] no multitouch
