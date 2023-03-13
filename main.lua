@@ -17,6 +17,13 @@ function love.load()
     -- Disable smooth scaling
     love.graphics.setDefaultFilter("nearest", "nearest")
 
+    -- Check the arguments
+    for i, arg in ipairs(arg) do
+        if arg == "release" then
+            release = true
+        end
+    end  
+
     -- Check if playing on a smartphone
     if love.system.getOS() == "Android" or love.system.getOS() == "iOS" then
         mobile = true
@@ -63,14 +70,7 @@ function love.load()
     bgMusic = love.audio.newSource("sounds/ost/ost1.mp3", "stream")
     bgMusic:setVolume(0.05)
     bgMusic:setLooping(true)
-    bgMusic:play()
-
-    -- Check the arguments
-    for i, arg in ipairs(arg) do
-        if arg == "release" then
-            release = true
-        end
-    end    
+    bgMusic:play()  
 
     -- Turn off the audio by default if not release
     if not release then
