@@ -1,5 +1,5 @@
 # Soon
-- [ ] Use pixelated fonts
+- [ ] Use pixelated fonts and make the font to have an black outline
 - [ ] Settings menu
 - [ ] Scale setting
 
