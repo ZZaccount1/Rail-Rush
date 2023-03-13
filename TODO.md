@@ -16,7 +16,6 @@
 - [ ] Sprint/fatigue
 
 # Bugs
-- [ ] Picking difficulty camera looking at 0, 0
 - [ ] Mobile's support
   - [ ] joysticks are too on the left side
   - [ ] no multitouch

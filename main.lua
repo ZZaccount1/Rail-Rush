@@ -45,6 +45,9 @@ function love.load()
     object = require("libs.classic")
     wf = require("libs.windfield")
     require "libs.gooi"
+    
+    -- Create the camera
+    cam = camera()
 
     -- Require and load every single script
     af.requireAll("src")
@@ -53,8 +56,8 @@ function love.load()
     cursor:load()
     af.load()
 
-    -- Create the camera
-    cam = camera()
+    -- Move the camera on the player
+    cameraBorders()
 
     -- Setup and run the background music
     bgMusic = love.audio.newSource("sounds/ost/ost1.mp3", "stream")

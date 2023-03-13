@@ -37,6 +37,8 @@ function player:load()
     -- Setup the collider for the player
     player.collider = worldMap:newBSGRectangleCollider(player.x, player.y + yOffset, player.colliderW*globalScale, player.colliderH*globalScale, 3)
     player.collider:setFixedRotation(true)
+
+    cam:lookAt(player.x + (tileSizeX/2), player.y + (tileSizeY/2))
 end
 
 function player:update(dt)
@@ -103,21 +105,7 @@ function player:update(dt)
     -- Move the camera
     cam:lookAt(player.x + (tileSizeX/2), player.y + (tileSizeY/2))
     
-    -- Camera borders
-    local mapW = gameMap.width * gameMap.tilewidth * globalScale
-    local mapH = gameMap.height * gameMap.tileheight * globalScale
-    if cam.x < windowW/2 then
-        cam.x = windowW/2
-    end
-    if cam.y < windowH/2 then
-        cam.y = windowH/2
-    end
-    if cam.x > (mapW - windowW/2) then
-        cam.x = (mapW - windowW/2)
-    end
-    if cam.y > (mapH - windowH/2) then
-        cam.y = (mapH - windowH/2)
-    end
+    cameraBorders()
 end
 
 function player:draw()
@@ -167,6 +155,23 @@ function player:animationSetup(orientation)
     elseif orientation == 'a' then
         player.facingRight = false
         player.anim = player.animations.left
+    end
+end
+
+function cameraBorders()
+    local mapW = gameMap.width * gameMap.tilewidth * globalScale
+    local mapH = gameMap.height * gameMap.tileheight * globalScale
+    if cam.x < windowW/2 then
+        cam.x = windowW/2
+    end
+    if cam.y < windowH/2 then
+        cam.y = windowH/2
+    end
+    if cam.x > (mapW - windowW/2) then
+        cam.x = (mapW - windowW/2)
+    end
+    if cam.y > (mapH - windowH/2) then
+        cam.y = (mapH - windowH/2)
     end
 end
 
