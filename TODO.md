@@ -17,6 +17,7 @@
 - [ ] Sprint/fatigue
 
 # Bugs
+- [ ] Player slightly moves to the right after picking the difficulty
 - [ ] Mobile's support
   - [ ] joysticks are too on the left side
   - [ ] no multitouch
