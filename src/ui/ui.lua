@@ -251,6 +251,8 @@ function ui:difficultyMenuDraw()
     love.graphics.setColor(23/255, 32/255, 56/255, 0.5)
     love.graphics.rectangle("fill", 0, 0, windowW, windowH)
     love.graphics.setColor(1,1,1,1)
+
+    love.graphics.print("Pick the difficulty", windowW/2 - ui.defaultFont:getWidth("Pick the difficulty")/2, windowH/3)
 end
 
 function ui:keypressed(k)
