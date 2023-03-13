@@ -65,6 +65,13 @@ function love.load()
     bgMusic:setLooping(true)
     bgMusic:play()
 
+    -- Check the arguments
+    for i, arg in ipairs(arg) do
+        if arg == "release" then
+            release = true
+        end
+    end    
+
     -- Turn off the audio by default if not release
     if not release then
         love.audio.setVolume(0)
