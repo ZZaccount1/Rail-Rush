@@ -7,8 +7,6 @@ if [[ "$(uname)" == "Linux" || "$(uname -r | grep -o Microsoft)" == "Microsoft" 
     echo "apktool is not installed. Please install apktool before continuing."
     exit 1
   fi
-
-  # Add your commands here to execute if the OS is Linux or WSL and apktool is installed
 else
   echo "Current OS is not Linux or WSL. Exiting..."
   exit 1
