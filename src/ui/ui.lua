@@ -157,6 +157,22 @@ function ui:load()
     difficultyPanel:add(easyButton)
     difficultyPanel:add(mediumButton)
     difficultyPanel:add(hardButton)
+    
+    -- Restart button
+    restartButton = gooi.newButton({ text = "Restart" }):onRelease(function()
+        love.event.quit("restart")
+    end)
+
+    -- Restart menu
+    restartPanel = gooi.newPanel({
+        x = (windowW/2)-(buttonsW/2),
+        y = (windowH/2)-(buttonsH/2),
+        w = buttonsW,
+        h = buttonsH,
+        layout = "grid 1x1"
+    })
+    restartPanel:add(restartButton)
+
 
     ui:calculateButtonsPos()
 
@@ -181,6 +197,7 @@ end
 
 function ui:update(dt)
     difficultyPanel:setVisible(ui.pickDifficulty)
+    restartPanel:setVisible(ui.drawLose or ui.drawWin)
 
     movementJoystick:setVisible(mobile)
     attackJoystick:setVisible(mobile)
@@ -237,12 +254,10 @@ function ui:draw()
     -- Draw Lose/Win menu
     if ui.drawWin then
         ui.drawLose = false
-        love.graphics.print("You Win!", windowW/2 - ui.defaultFont:getWidth("You Win!")/2, 0)
-        love.graphics.print("Press Y to restart", windowW/2 - ui.defaultFont:getWidth("Press Y to restart")/2,  windowH/2 - ui.defaultFont:getHeight()/2)
+        love.graphics.print("You Win!", windowW/2 - ui.defaultFont:getWidth("You Win!")/2, windowH/3)
     elseif ui.drawLose then
         ui.drawWin = false
-        love.graphics.print("You Lost!", windowW/2 - ui.defaultFont:getWidth("You Lost!")/2, 0)
-        love.graphics.print("Press Y to restart", windowW/2 - ui.defaultFont:getWidth("Press Y to restart")/2,  windowH/2 - ui.defaultFont:getHeight()/2)
+        love.graphics.print("You Lost!", windowW/2 - ui.defaultFont:getWidth("You Lost!")/2, windowH/3)
     end
 end
 
