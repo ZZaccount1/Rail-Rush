@@ -1,4 +1,5 @@
 # Soon
+- [ ] Use pixelated fonts
 - [ ] Settings menu
 - [ ] Scale setting
 

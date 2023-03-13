@@ -91,6 +91,67 @@ function ui:load()
     buttons.medium = {x=0, y=0, w=125*scaleRatio, h=40*scaleRatio, text="Very Easy"}
     buttons.hard = {x=0, y=0, w=75*scaleRatio, h=40*scaleRatio, text="Easy"}
 
+    -- Create difficulty buttons
+    style = {
+        showBorder = true,
+        bgColor = {0.208, 0.220, 0.222, 1},
+    }
+    gooi.setStyle(style)
+    
+    local buttonsW = 430
+    local buttonsH = 50
+
+    difficultyPanel = gooi.newPanel({
+        x = (windowW/2)-(buttonsW/2),
+        y = (windowH/2)-(buttonsH/2),
+        w = buttonsW,
+        h = buttonsH,
+        layout = "grid 1x3"
+    })
+
+    easyButton = gooi.newButton({ text = "Super Easy" }):onRelease(function()
+        ui.pickDifficulty = false
+        pause = false
+
+        difficulty = "easy"
+
+        interactionRadius = 110 * scaleRatio
+
+        minecart.speed = minecart.easySpeed
+        minecart.speedIncrease = minecart.speedIncreaseEasy
+
+        gameStart()
+    end)
+    mediumButton = gooi.newButton({ text = "Very Easy" }):onRelease(function()
+        ui.pickDifficulty = false
+        pause = false
+
+        difficulty = "medium"
+
+        interactionRadius = 90 * scaleRatio
+                
+        minecart.speed = minecart.mediumSpeed
+        minecart.speedIncrease = minecart.speedIncreaseMedium
+
+        gameStart()
+    end)
+    hardButton = gooi.newButton({ text = "Easy" }):onRelease(function()
+        ui.pickDifficulty = false
+        pause = false
+
+        difficulty = "hard"
+
+        interactionRadius = 75 * scaleRatio
+
+        minecart.speed = minecart.hardSpeed
+        minecart.speedIncrease = minecart.speedIncreaseHard
+                
+        gameStart()
+    end)
+    difficultyPanel:add(easyButton)
+    difficultyPanel:add(mediumButton)
+    difficultyPanel:add(hardButton)
+
     ui:calculateButtonsPos()
 
     -- Create and setup the default font 
@@ -114,6 +175,8 @@ function ui:load()
 end
 
 function ui:update(dt)
+    difficultyPanel:setVisible(ui.pickDifficulty)
+
     movementJoystick:setVisible(mobile)
     attackJoystick:setVisible(mobile)
 end
@@ -183,79 +246,6 @@ function ui:difficultyMenuDraw()
     love.graphics.setColor(75/255, 0, 130/255, 0.5)
     love.graphics.rectangle("fill", 0, 0, windowW, windowH)
     love.graphics.setColor(1,1,1,1)
-
-    love.graphics.print("Pick the difficulty", windowW/2 - ui.defaultFont:getWidth("Pick the difficulty")/2, 25)
-    
-    -- Draw the bg
-    love.graphics.setLineWidth(1)
-    love.graphics.setColor(1,1,1,1)
-    love.graphics.rectangle("line", buttons.easy.x,   buttons.easy.y,   buttons.easy.w,   buttons.easy.h)
-    love.graphics.rectangle("line", buttons.medium.x, buttons.medium.y, buttons.medium.w, buttons.medium.h)
-    love.graphics.rectangle("line", buttons.hard.x,   buttons.hard.y,   buttons.hard.w,   buttons.hard.h)
-    love.graphics.setColor(1,1,1,1)
-    love.graphics.setLineWidth(1)
-
-    -- Draw the text for each button
-    local easyTextSize = ui.defaultFont:getWidth("Super Easy")/2
-    local mediumTextSize = ui.defaultFont:getWidth("Very Easy")/2
-    local hardTextSize = ui.defaultFont:getWidth("Easy")/2
-    love.graphics.print(buttons.easy.text, buttons.easy.x + buttons.easy.w / 2 - easyTextSize, centerY + buttons.easy.h / 2 - love.graphics.getFont():getHeight() / 2)
-    love.graphics.print(buttons.medium.text, buttons.medium.x + buttons.medium.w / 2 - mediumTextSize, centerY + buttons.medium.h / 2 - love.graphics.getFont():getHeight() / 2)
-    love.graphics.print(buttons.hard.text, buttons.hard.x + buttons.hard.w / 2 - hardTextSize, centerY + buttons.hard.h / 2 - love.graphics.getFont():getHeight() / 2)
-end
-
-function ui:mousepressed(x, y, button, istouch)
-    if button == 1 then
-        if ui.pickDifficulty then
-            -- Check if the mouse is within the Easy button
-            if x >= buttons.easy.x and x <= buttons.easy.x + buttons.easy.w and
-            y >= buttons.easy.y and y <= buttons.easy.y + buttons.easy.h then
-                ui.pickDifficulty = false
-                pause = false
-
-                difficulty = "easy"
-
-                interactionRadius = 110 * scaleRatio
-
-                minecart.speed = minecart.easySpeed
-                minecart.speedIncrease = minecart.speedIncreaseEasy
-
-                gameStart()
-            end
-
-            -- Check if the mouse is within the Medium button
-            if x >= buttons.medium.x and x <= buttons.medium.x + buttons.medium.w and
-            y >= buttons.medium.y and y <= buttons.medium.y + buttons.medium.h then
-                ui.pickDifficulty = false
-                pause = false
-
-                difficulty = "medium"
-
-                interactionRadius = 90 * scaleRatio
-                
-                minecart.speed = minecart.mediumSpeed
-                minecart.speedIncrease = minecart.speedIncreaseMedium
-
-                gameStart()
-            end
-
-            -- Check if the mouse is within the Hard button
-            if x >= buttons.hard.x and x <= buttons.hard.x + buttons.hard.w and
-            y >= buttons.hard.y and y <= buttons.hard.y + buttons.hard.h then
-                ui.pickDifficulty = false
-                pause = false
-
-                difficulty = "hard"
-
-                interactionRadius = 75 * scaleRatio
-
-                minecart.speed = minecart.hardSpeed
-                minecart.speedIncrease = minecart.speedIncreaseHard
-                
-                gameStart()
-            end
-        end
-    end
 end
 
 function ui:keypressed(k)
@@ -270,6 +260,5 @@ return
 {
     load = function(...) return ui:load(...) end,
     update = function(...) return ui:update(...) end,
-    mousepressed = function(...) return ui:mousepressed(...) end,
     keypressed = function(...) return ui:keypressed(...) end,
 }
