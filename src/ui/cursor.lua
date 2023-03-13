@@ -30,7 +30,7 @@ function cursor:draw()
             deadOrBuilded = v.builded
         end
 
-        if v:isHovering() and not deadOrBuilded then
+        if v:isHovering() and not deadOrBuilded and not pause then
             cursorSprite = cursor.highlighted
             v.hovered = true
             break

@@ -54,7 +54,7 @@ function rwTile:draw()
         love.graphics.draw(self.spriteSheet, self.quad, self.x, self.y)
     else
         -- Draw the sprite
-        if self.hovered then 
+        if self.hovered and not pause then 
             love.graphics.setShader(brightnessShader)
             brightnessShader:send("brightness", 1.5)
         end
@@ -70,7 +70,7 @@ function rwTile:onClick(x,y)
 end
 
 function rwTile:hit()
-    if self.builded or ( ui.tutorial and ( not self.tutorial or ( self.tutorial and ui.tutorialStep ~= ui.tutorial.railStepID ))) then return end
+    if self.builded or ( ui.isTutorial and ( not self.tutorial or ( self.tutorial and ui.tutorialStep ~= ui.tutorial.railStepID ))) then return end
 
     local selfX = self.x * globalScale
     local selfY = self.y * globalScale

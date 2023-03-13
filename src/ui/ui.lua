@@ -6,7 +6,7 @@ ui.stoneAmount = 0
 ui.textScale = 20 * scaleRatio
 
 -- Different menus
-ui.tutorial = true
+ui.isTutorial = true
 ui.pickDifficulty = false
 ui.drawWin = false
 ui.drawLose = false
@@ -38,9 +38,15 @@ function loadTutorialCompletionStatus()
 end
 
 function ui:endTutorial()
-    ui.tutorial = false
-    ui.pickDifficulty= true
+    ui:loadDifficultyMenu(true)
+    
     saveTutorialCompletionStatus(true)
+end
+
+function ui:loadDifficultyMenu(value)
+    ui.isTutorial = not value
+    pause = value
+    ui.pickDifficulty= value
 end
 
 function ui:calculateButtonsPos()
@@ -169,8 +175,7 @@ function ui:load()
 
     -- Check if already played the tutorial
     if loadTutorialCompletionStatus() then
-        ui.tutorial = false
-        ui.pickDifficulty= true
+        ui:loadDifficultyMenu(true)
     end
 end
 
@@ -189,7 +194,7 @@ function ui:draw()
     love.graphics.print("stone: "..ui.stoneAmount, 10+12*iconScale, 10*2 + ui.textScale)
 
     -- Draw the tutorial
-    if ui.tutorial then
+    if ui.isTutorial then
         -- Draw the arrow
         cam:attach()
         if ui.tutorialStep == ui.tutorial.treeStepID then
@@ -243,13 +248,13 @@ end
 
 function ui:difficultyMenuDraw()
     -- Draw the bg
-    love.graphics.setColor(75/255, 0, 130/255, 0.5)
+    love.graphics.setColor(23/255, 32/255, 56/255, 0.5)
     love.graphics.rectangle("fill", 0, 0, windowW, windowH)
     love.graphics.setColor(1,1,1,1)
 end
 
 function ui:keypressed(k)
-    if ui.tutorial then
+    if ui.isTutorial then
         if k == "h" then
             ui:endTutorial()
         end    

@@ -34,7 +34,7 @@ function minecart:load()
 end
 
 function minecart:update(dt)
-    if pause or ui.tutorial or ui.pickDifficulty then return end
+    if pause or ui.isTutorial or ui.pickDifficulty then return end
 
     minecart.speed = minecart.speed + minecart.speedIncrease  * dt
 

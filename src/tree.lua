@@ -67,7 +67,7 @@ function tree:draw()
     if self.dead then return end
 
     -- Setup brightness
-    if self.hovered then 
+    if self.hovered and not pause then 
         love.graphics.setShader(brightnessShader)
         brightnessShader:send("brightness", 1.5)
     end
@@ -85,7 +85,7 @@ function tree:drawAbove()
     love.graphics.scale(globalScale)
 
     -- Setup brightness
-    if self.hovered then
+    if self.hovered and not pause then
         love.graphics.setShader(brightnessShader)
         brightnessShader:send("brightness", 1.5)
     end
@@ -103,7 +103,7 @@ function tree:onClick(x,y)
 end
 
 function tree:hit()
-    if self.dead or ( ui.tutorial and ( not self.tutorial or ( self.tutorial and ui.tutorialStep ~= ui.tutorial.treeStepID ))) then return end
+    if self.dead or ( ui.isTutorial and ( not self.tutorial or ( self.tutorial and ui.tutorialStep ~= ui.tutorial.treeStepID ))) then return end
 
     local selfX = self.x * globalScale
     local selfY = self.y * globalScale

@@ -78,6 +78,7 @@ function gameStart()
 end
 
 function love.update(dt)
+    print(pause)
     -- Hide status bar and home buttons for mobile devices
     if mobile then
         local _, _, flags = love.window.getMode()
