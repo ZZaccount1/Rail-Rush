@@ -17,7 +17,7 @@
 - [ ] Sprint/fatigue
 
 # Bugs
-- [ ] Player slightly moves to the right after picking the difficulty
+- [ ] Player slightly moves to the right after picking the difficulty/and i guess will be better to just reset the position to the one that is right now
 - [ ] Mobile's support
   - [ ] joysticks are too on the left side
   - [ ] no multitouch
